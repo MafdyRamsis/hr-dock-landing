@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useLang } from "../context/LanguageContext";
 import Logo from "./Logo";
 
@@ -55,7 +56,11 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-white/30">
           <p>© {year} HR Dock. {t("footer.rights")}</p>
-          <p className="text-[#00B4B4]/60 text-xs">Built in Egypt 🇪🇬 for Egypt</p>
+          <div className="flex items-center gap-6">
+            <Link href="/terms" className="hover:text-[#00B4B4] transition-colors">Terms & Conditions</Link>
+            <Link href="/privacy" className="hover:text-[#00B4B4] transition-colors">Privacy Policy</Link>
+            <p className="text-[#00B4B4]/60 text-xs">Built in Egypt 🇪🇬</p>
+          </div>
         </div>
       </div>
     </footer>
