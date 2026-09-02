@@ -32,7 +32,7 @@ export default function PrivacyPage() {
         <div className="prose prose-invert prose-lg max-w-none space-y-10 text-white/70 leading-relaxed">
 
           <Section title="1. Who We Are">
-            <p>HR Dock ("we", "us", "our") is an HR management platform built for the Egyptian market, headquartered in Cairo, Egypt. We operate under the Arab Republic of Egypt's Personal Data Protection Law (PDPL) and align with international best practices including GDPR principles.</p>
+            <p>HR Dock (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) is an HR management platform built for the Egyptian market, headquartered in Cairo, Egypt. We operate under the Arab Republic of Egypt&apos;s Personal Data Protection Law (PDPL) and align with international best practices including GDPR principles.</p>
             <p>For privacy-related enquiries, contact our Data Protection contact at <a href={`mailto:${COMPANY_EMAIL}`} className="text-[#00B4B4] hover:underline">{COMPANY_EMAIL}</a>.</p>
           </Section>
 
@@ -41,7 +41,7 @@ export default function PrivacyPage() {
               <li><strong className="text-white">Account Data:</strong> Information you provide to create and manage your HR Dock workspace (company name, admin name, email, billing details).</li>
               <li><strong className="text-white">Employee Data:</strong> Personal data about your employees that you upload or generate through the platform (names, national IDs, salaries, attendance records, leave balances, performance data, etc.).</li>
               <li><strong className="text-white">Usage Data:</strong> Technical data about how you interact with the platform (page visits, feature usage, device info, IP address, browser type).</li>
-              <li><strong className="text-white">Controller:</strong> The Organisation that determines the purposes and means of processing Employee Data — that's <strong className="text-white">you</strong>, not HR Dock.</li>
+              <li><strong className="text-white">Controller:</strong> The Organisation that determines the purposes and means of processing Employee Data — that&apos;s <strong className="text-white">you</strong>, not HR Dock.</li>
               <li><strong className="text-white">Processor:</strong> HR Dock acts as a data processor on your behalf for Employee Data.</li>
             </ul>
           </Section>
@@ -78,7 +78,7 @@ export default function PrivacyPage() {
           <Section title="5. Employee Data — Special Obligations">
             <p>HR Dock processes Employee Data as a <strong className="text-white">data processor</strong> under your instructions as the data controller. This means:</p>
             <ul>
-              <li>You are responsible for having a lawful basis (e.g. employment contract, legal obligation) to process your employees' personal data.</li>
+              <li>You are responsible for having a lawful basis (e.g. employment contract, legal obligation) to process your employees&apos; personal data.</li>
               <li>You are responsible for informing your employees that their data is processed on the HR Dock platform.</li>
               <li>HR Dock will assist you in responding to data subject requests (access, correction, deletion) within the platform.</li>
               <li>We will notify you without undue delay — and no later than 72 hours — if we become aware of a personal data breach affecting Employee Data.</li>
@@ -112,7 +112,7 @@ export default function PrivacyPage() {
             <p>We do not sell your data. We share data only with:</p>
             <ul>
               <li><strong className="text-white">Sub-processors:</strong> Third-party services we use to operate the platform (cloud hosting, payment processing, error monitoring, email delivery). All sub-processors are bound by data processing agreements and provide equivalent data protection guarantees.</li>
-              <li><strong className="text-white">Legal authorities:</strong> When required by Egyptian law, court order, or to protect HR Dock's legal rights.</li>
+              <li><strong className="text-white">Legal authorities:</strong> When required by Egyptian law, court order, or to protect HR Dock&apos;s legal rights.</li>
               <li><strong className="text-white">Business transfers:</strong> In the event of a merger or acquisition, your data may be transferred. We will notify you in advance and you retain the right to export your data.</li>
             </ul>
           </Section>

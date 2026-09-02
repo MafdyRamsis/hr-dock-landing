@@ -1,10 +1,6 @@
 "use client";
 import { useLang } from "../context/LanguageContext";
 
-const clients: { name: string; industry: string; size: string }[] = [];
-
-const partners: { name: string; role: string }[] = [];
-
 export default function Clients() {
   const { t } = useLang();
 

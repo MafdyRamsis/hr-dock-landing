@@ -32,7 +32,7 @@ export default function TermsPage() {
         <div className="prose prose-invert prose-lg max-w-none space-y-10 text-white/70 leading-relaxed">
 
           <Section title="1. Acceptance of Terms">
-            <p>By accessing or using the {COMPANY_NAME} platform ("Service"), you agree to be bound by these Terms and Conditions ("Terms"). If you are using the Service on behalf of a company or other legal entity ("Organisation"), you represent that you have the authority to bind that entity to these Terms.</p>
+            <p>By accessing or using the {COMPANY_NAME} platform (&quot;Service&quot;), you agree to be bound by these Terms and Conditions (&quot;Terms&quot;). If you are using the Service on behalf of a company or other legal entity (&quot;Organisation&quot;), you represent that you have the authority to bind that entity to these Terms.</p>
             <p>If you do not agree to these Terms, you must not use the Service.</p>
           </Section>
 
@@ -57,7 +57,7 @@ export default function TermsPage() {
           </Section>
 
           <Section title="4. Data Ownership">
-            <p><strong className="text-white">Your data belongs to you.</strong> All employee data, payroll records, documents, and other content you upload or generate through the Service ("Customer Data") remains the sole property of your Organisation.</p>
+            <p><strong className="text-white">Your data belongs to you.</strong> All employee data, payroll records, documents, and other content you upload or generate through the Service (&quot;Customer Data&quot;) remains the sole property of your Organisation.</p>
             <p>{COMPANY_NAME} does not sell, rent, or share Customer Data with third parties for commercial purposes. We access Customer Data only as necessary to provide and improve the Service, or as required by law.</p>
             <p>Upon termination of your subscription, you may export your Customer Data within 30 days. After this period, {COMPANY_NAME} reserves the right to delete Customer Data from its systems.</p>
           </Section>
@@ -80,7 +80,7 @@ export default function TermsPage() {
               <li>All fees are quoted in Egyptian Pounds (EGP) unless otherwise specified.</li>
               <li>Fees are non-refundable except as required by applicable law or as expressly stated in your agreement.</li>
               <li>Failure to pay may result in suspension of access after a 7-day grace period.</li>
-              <li>{COMPANY_NAME} reserves the right to adjust pricing with 30 days' written notice.</li>
+              <li>{COMPANY_NAME} reserves the right to adjust pricing with 30 days&apos; written notice.</li>
             </ul>
           </Section>
 
@@ -99,7 +99,7 @@ export default function TermsPage() {
           </Section>
 
           <Section title="10. Limitation of Liability">
-            <p>To the maximum extent permitted by Egyptian law, {COMPANY_NAME}'s total liability to your Organisation for any claim arising under or related to these Terms shall not exceed the fees paid by your Organisation in the three (3) months preceding the event giving rise to the claim.</p>
+            <p>To the maximum extent permitted by Egyptian law, {COMPANY_NAME}&apos;s total liability to your Organisation for any claim arising under or related to these Terms shall not exceed the fees paid by your Organisation in the three (3) months preceding the event giving rise to the claim.</p>
             <p>{COMPANY_NAME} is not liable for indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or business opportunities.</p>
           </Section>
 
