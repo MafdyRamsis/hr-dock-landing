@@ -7,8 +7,7 @@ export const metadata: Metadata = {
   description: "HR Dock Privacy Policy — how we collect, use, and protect your data",
 };
 
-const EFFECTIVE_DATE = "1 July 2025";
-const COMPANY_EMAIL = "privacy@hrdock.com";
+const EFFECTIVE_DATE = "3 September 2026";
 
 export default function PrivacyPage() {
   return (
@@ -32,8 +31,8 @@ export default function PrivacyPage() {
         <div className="prose prose-invert prose-lg max-w-none space-y-10 text-white/70 leading-relaxed">
 
           <Section title="1. Who We Are">
-            <p>HR Dock (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) is an HR management platform built for the Egyptian market, headquartered in Cairo, Egypt. We operate under the Arab Republic of Egypt&apos;s Personal Data Protection Law (PDPL) and align with international best practices including GDPR principles.</p>
-            <p>For privacy-related enquiries, contact our Data Protection contact at <a href={`mailto:${COMPANY_EMAIL}`} className="text-[#00B4B4] hover:underline">{COMPANY_EMAIL}</a>.</p>
+            <p>HR Dock (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) is an HR management platform built for organisations operating in Egypt. The legal service provider for each customer is identified in that customer&apos;s signed order or service agreement.</p>
+            <p>For privacy-related enquiries, use the contact form on our website and identify the request as a privacy enquiry.</p>
           </Section>
 
           <Section title="2. Definitions">
@@ -48,7 +47,7 @@ export default function PrivacyPage() {
 
           <Section title="3. Data We Collect">
             <p><strong className="text-white">3.1 Account & Billing Data</strong></p>
-            <p>When you register or subscribe, we collect: company name, administrator name, work email address, phone number, billing address, and payment information (processed securely via our payment provider — we do not store full card numbers).</p>
+            <p>When you register or subscribe, we may collect company name, administrator name, work email address, phone number, billing address, and subscription records. Payment details, if online payments are introduced, will be handled under the payment provider disclosures shown at that time.</p>
 
             <p><strong className="text-white">3.2 Employee Data (on your behalf)</strong></p>
             <p>As the data controller, you are responsible for the Employee Data you enter into HR Dock. This may include: full names, national ID numbers, dates of birth, job titles, departments, salary and compensation details, attendance and leave records, performance evaluations, disciplinary records, benefit enrolments, and contract documents.</p>
@@ -81,20 +80,18 @@ export default function PrivacyPage() {
               <li>You are responsible for having a lawful basis (e.g. employment contract, legal obligation) to process your employees&apos; personal data.</li>
               <li>You are responsible for informing your employees that their data is processed on the HR Dock platform.</li>
               <li>HR Dock will assist you in responding to data subject requests (access, correction, deletion) within the platform.</li>
-              <li>We will notify you without undue delay — and no later than 72 hours — if we become aware of a personal data breach affecting Employee Data.</li>
+              <li>We will notify affected customers of a qualifying personal data breach as required by applicable law and the relevant customer agreement.</li>
             </ul>
             <p>Certain categories of Employee Data may be considered sensitive (e.g. health-related leave, disciplinary records). You must ensure you have the appropriate legal basis before entering such data into the platform.</p>
           </Section>
 
           <Section title="6. Data Storage & Security">
-            <p>All data is stored on secure cloud infrastructure (AWS / Microsoft Azure) with servers located in the EU or Middle East regions. We implement the following security measures:</p>
+            <p>Data is processed using managed cloud hosting and database providers. Hosting providers and regions may change as the Service evolves, subject to applicable contractual and legal safeguards. Current sub-processor information is available to customers on request.</p>
             <ul>
-              <li>AES-256 encryption at rest for all Customer Data.</li>
-              <li>TLS 1.2+ encryption in transit.</li>
-              <li>Role-based access controls — employees only see data relevant to their role.</li>
-              <li>Multi-factor authentication (MFA) available for all accounts.</li>
-              <li>Regular security audits and penetration testing.</li>
-              <li>Automated backups with point-in-time recovery.</li>
+              <li>Encrypted HTTPS connections for data in transit.</li>
+              <li>Role-based access controls and tenant-level data isolation.</li>
+              <li>Restricted administrative access and security logging.</li>
+              <li>Managed backups and recovery procedures appropriate to the subscribed service.</li>
             </ul>
             <p>Despite these measures, no system is completely secure. We encourage you to use strong passwords and enable MFA.</p>
           </Section>
@@ -102,9 +99,9 @@ export default function PrivacyPage() {
           <Section title="7. Data Retention">
             <ul>
               <li><strong className="text-white">Active accounts:</strong> Data is retained for the duration of your subscription.</li>
-              <li><strong className="text-white">After termination:</strong> You have 30 days to export your Customer Data. After this window, we will delete Customer Data from our active systems within 60 days, and from backups within 90 days.</li>
-              <li><strong className="text-white">Billing records:</strong> Retained for 7 years to comply with Egyptian tax and accounting regulations.</li>
-              <li><strong className="text-white">Usage logs:</strong> Retained for up to 12 months for security and performance monitoring.</li>
+              <li><strong className="text-white">After termination:</strong> Export and deletion periods follow the signed customer agreement, applicable law, and technically necessary backup-retention cycles.</li>
+              <li><strong className="text-white">Business records:</strong> Retained for the period required by applicable tax, accounting, and legal obligations.</li>
+              <li><strong className="text-white">Security and usage logs:</strong> Retained only as long as reasonably necessary for security, support, and service operation.</li>
             </ul>
           </Section>
 
@@ -127,15 +124,14 @@ export default function PrivacyPage() {
               <li><strong className="text-white">Objection:</strong> Object to processing based on legitimate interests.</li>
               <li><strong className="text-white">Withdraw consent:</strong> Where processing is based on consent, you may withdraw it at any time.</li>
             </ul>
-            <p>To exercise any of these rights, contact <a href={`mailto:${COMPANY_EMAIL}`} className="text-[#00B4B4] hover:underline">{COMPANY_EMAIL}</a>. We will respond within 30 days.</p>
+            <p>To exercise any of these rights, use the contact form on our website and identify the request as a privacy enquiry. We will respond within the period required by applicable law.</p>
           </Section>
 
           <Section title="10. Cookies">
             <p>HR Dock uses the following cookies:</p>
             <ul>
               <li><strong className="text-white">Essential cookies:</strong> Required for authentication and session management. Cannot be disabled.</li>
-              <li><strong className="text-white">Analytics cookies:</strong> Used to understand feature usage and improve the platform. You may opt out via your account settings.</li>
-              <li><strong className="text-white">Marketing cookies:</strong> Only used on our public marketing website (not inside the platform) and only with your consent.</li>
+              <li><strong className="text-white">Optional cookies:</strong> If analytics or marketing cookies are introduced, the website will provide an appropriate notice and consent choices before they are used where required.</li>
             </ul>
           </Section>
 
@@ -152,7 +148,7 @@ export default function PrivacyPage() {
             <p>
               <strong className="text-white">HR Dock — Data Protection</strong><br />
               Cairo, Egypt<br />
-              <a href={`mailto:${COMPANY_EMAIL}`} className="text-[#00B4B4] hover:underline">{COMPANY_EMAIL}</a>
+              <Link href="/#contact" className="text-[#00B4B4] hover:underline">Contact HR Dock</Link>
             </p>
           </Section>
 

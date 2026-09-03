@@ -22,7 +22,7 @@ const translations: Record<string, Record<Lang, string>> = {
     en: "HR Dock streamlines payroll, attendance, recruitment, and compliance — all in one platform built for the Egyptian market.",
     ar: "HR Dock يبسّط الرواتب والحضور والتوظيف والامتثال — كل ذلك في منصة واحدة مصمّمة للسوق المصري.",
   },
-  "hero.cta1": { en: "Get Started Free", ar: "ابدأ مجاناً" },
+  "hero.cta1": { en: "Request a Demo", ar: "اطلب عرضاً توضيحياً" },
   "hero.cta2": { en: "See How It Works", ar: "شاهد كيف يعمل" },
 
   // Features
@@ -33,8 +33,8 @@ const translations: Record<string, Record<Lang, string>> = {
   },
   "features.payroll.title": { en: "Smart Payroll", ar: "رواتب ذكية" },
   "features.payroll.desc": {
-    en: "Automate salary calculations, deductions, bonuses, and Egyptian labor law compliance.",
-    ar: "أتمتة حسابات الرواتب والخصومات والمكافآت والامتثال لقانون العمل المصري.",
+    en: "Automate salary calculations, deductions, bonuses, and configurable Egyptian payroll workflows.",
+    ar: "أتمتة حسابات الرواتب والخصومات والمكافآت وسير عمل الرواتب القابل للتهيئة للسوق المصري.",
   },
   "features.attendance.title": { en: "Attendance & Leave", ar: "الحضور والإجازات" },
   "features.attendance.desc": {
@@ -75,9 +75,11 @@ const translations: Record<string, Record<Lang, string>> = {
   "contact.message": { en: "Message (optional)", ar: "رسالة (اختياري)" },
   "contact.submit": { en: "Request Demo", ar: "اطلب العرض" },
   "contact.success": {
-    en: "Thanks! We'll be in touch soon.",
-    ar: "شكراً! سنتواصل معك قريباً.",
+    en: "Thanks! Your request was received. We'll be in touch soon.",
+    ar: "شكراً! تم استلام طلبك وسنتواصل معك قريباً.",
   },
+  "contact.sending": { en: "Sending…", ar: "جارٍ الإرسال…" },
+  "contact.error": { en: "We couldn't send your request. Please try again.", ar: "تعذر إرسال طلبك. يرجى المحاولة مرة أخرى." },
 
   // Navbar extras
   "nav.about": { en: "About", ar: "من نحن" },
@@ -85,15 +87,15 @@ const translations: Record<string, Record<Lang, string>> = {
   "nav.clients": { en: "Clients", ar: "عملاؤنا" },
 
   // Stats
-  "stats.companies": { en: "Companies Trust HR Dock", ar: "شركة تثق في HR Dock" },
-  "stats.employees": { en: "Employees Managed", ar: "موظف تحت الإدارة" },
-  "stats.modules": { en: "Integrated Modules", ar: "وحدة متكاملة" },
-  "stats.uptime": { en: "Uptime SLA", ar: "ضمان التشغيل" },
+  "stats.market": { en: "Built for Egypt", ar: "مصمم لمصر" },
+  "stats.languages": { en: "Arabic & English", ar: "العربية والإنجليزية" },
+  "stats.features": { en: "Integrated Features", ar: "ميزة متكاملة" },
+  "stats.access": { en: "Web & Mobile Access", ar: "الوصول عبر الويب والجوال" },
 
   // AI Callout
   "ai.badge": { en: "AI-Powered", ar: "مدعوم بالذكاء الاصطناعي" },
-  "ai.title": { en: "The only Egyptian HR platform with built-in AI", ar: "المنصة المصرية الوحيدة للموارد البشرية بذكاء اصطناعي مدمج" },
-  "ai.sub": { en: "While others add AI as an afterthought, HR Dock's Recruitment & AI module uses machine learning to screen candidates, rank applicants, and run structured assessments — saving your team hours on every hire.", ar: "بينما يضيف الآخرون الذكاء الاصطناعي كفكرة لاحقة، تستخدم وحدة التوظيف والذكاء الاصطناعي في HR Dock التعلم الآلي لفلترة المرشحين وتصنيف المتقدمين وإجراء التقييمات المنظمة." },
+  "ai.title": { en: "AI-assisted recruitment, built into your HR workflow", ar: "توظيف مدعوم بالذكاء الاصطناعي داخل سير عمل الموارد البشرية" },
+  "ai.sub": { en: "HR Dock's Recruitment & AI module helps screen candidates, rank applicants, and run structured assessments — giving your team a consistent starting point for every hire.", ar: "تساعد وحدة التوظيف والذكاء الاصطناعي في HR Dock على فلترة المرشحين وتصنيف المتقدمين وإجراء تقييمات منظمة لتوفير نقطة بداية متسقة لكل عملية توظيف." },
   "ai.feat1": { en: "AI Candidate Screening", ar: "فلترة المرشحين بالذكاء الاصطناعي" },
   "ai.feat2": { en: "Smart Applicant Ranking", ar: "تصنيف ذكي للمتقدمين" },
   "ai.feat3": { en: "Automated Assessment Portal", ar: "بوابة تقييم آلية" },
@@ -106,7 +108,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "products.m1.name": { en: "Payroll & Attendance", ar: "الرواتب والحضور" },
   "products.m1.tag": { en: "Module 1", ar: "الوحدة الأولى" },
   "products.m1.sub": { en: "الرواتب والحضور", ar: "الرواتب والحضور" },
-  "products.m1.desc": { en: "Core HR compliance — attendance tracking, leave management, full payroll with Egyptian NOSS & tax.", ar: "الامتثال الأساسي للموارد البشرية — تتبع الحضور وإدارة الإجازات والرواتب الكاملة مع NOSS والضرائب المصرية." },
+  "products.m1.desc": { en: "Core HR operations — attendance tracking, leave management, and payroll configurable for Egyptian NOSS and tax workflows.", ar: "عمليات الموارد البشرية الأساسية — تتبع الحضور وإدارة الإجازات ورواتب قابلة للتهيئة لسير عمل التأمينات والضرائب المصرية." },
   "products.m2.name": { en: "HR Operations", ar: "عمليات الموارد البشرية" },
   "products.m2.tag": { en: "Module 2", ar: "الوحدة الثانية" },
   "products.m2.sub": { en: "إدارة الموارد البشرية", ar: "إدارة الموارد البشرية" },
@@ -128,10 +130,10 @@ const translations: Record<string, Record<Lang, string>> = {
   "about.v3.text": { en: "Transparency, compliance, simplicity — and always putting people first.", ar: "الشفافية والامتثال والبساطة — ووضع الناس دائماً في المقدمة." },
 
   // Clients & Partners
-  "clients.title": { en: "Trusted by Egyptian Businesses", ar: "يثق بها الشركات المصرية" },
-  "clients.sub": { en: "From startups to enterprise groups — HR Dock scales with you.", ar: "من الشركات الناشئة إلى المجموعات الكبرى — HR Dock يتوسع معك." },
+  "clients.title": { en: "Built to grow with Egyptian businesses", ar: "مصمم لينمو مع الشركات المصرية" },
+  "clients.sub": { en: "From your first pilot team to a multi-company group — HR Dock is designed to scale with you.", ar: "من أول فريق تجريبي إلى مجموعة متعددة الشركات — صُمم HR Dock ليتوسع معك." },
   "partners.title": { en: "Our Partners", ar: "شركاؤنا" },
-  "partners.sub": { en: "Integrated with the tools your team already uses.", ar: "متكامل مع الأدوات التي يستخدمها فريقك بالفعل." },
+  "partners.sub": { en: "Integration partnerships are being prepared for the tools your team uses.", ar: "نعمل على إعداد شراكات التكامل مع الأدوات التي يستخدمها فريقك." },
 
   // Footer
   "footer.rights": { en: "All rights reserved.", ar: "جميع الحقوق محفوظة." },

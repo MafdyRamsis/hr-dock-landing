@@ -25,6 +25,10 @@ npm install
 
 ### 2. Start
 
+Copy `.env.example` to `.env.local` and configure the three server-only Resend
+variables. The demo form deliberately returns an error instead of pretending a
+lead was received when email delivery is not configured.
+
 ```bash
 npm run dev
 ```
@@ -53,7 +57,8 @@ app/
 ├── globals.css         # Global CSS (Tailwind base)
 ├── favicon.ico
 ├── privacy/            # Privacy policy page
-└── terms/              # Terms of service page
+├── terms/              # Terms of service page
+└── api/demo-request/   # Validated server-side demo lead delivery
 ```
 
 ---
@@ -71,6 +76,10 @@ app/
 ## Deployment
 
 Deployed on **Vercel** via GitHub auto-deploy. Every push to `main` triggers a new build.
+
+Add `RESEND_API_KEY`, `DEMO_FROM_EMAIL`, and `DEMO_TO_EMAIL` to the Vercel project
+for Production and Preview. Verify the sending domain in Resend before using an
+`@hrdock.app` sender.
 
 ```bash
 git push origin main

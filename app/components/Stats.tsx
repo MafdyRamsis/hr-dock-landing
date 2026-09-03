@@ -2,10 +2,10 @@
 import { useLang } from "../context/LanguageContext";
 
 const stats = [
-  { value: "50+",  key: "stats.companies" },
-  { value: "5,000+", key: "stats.employees" },
-  { value: "45",   key: "stats.modules" },
-  { value: "99.9%", key: "stats.uptime" },
+  { value: "EG", key: "stats.market" },
+  { value: "AR · EN", key: "stats.languages" },
+  { value: "45", key: "stats.features" },
+  { value: "2", key: "stats.access" },
 ];
 
 export default function Stats() {

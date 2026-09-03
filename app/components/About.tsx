@@ -51,7 +51,7 @@ export default function About() {
               { label: "Founded", value: "2024" },
               { label: "Headquarters", value: "Cairo, Egypt 🇪🇬" },
               { label: "Market", value: "Egyptian Private Sector" },
-              { label: "Compliance", value: "NOSS · Egyptian Labor Law" },
+              { label: "Configuration", value: "Egypt-focused payroll workflows" },
               { label: "Languages", value: "Arabic & English" },
               { label: "Modules", value: "3 (45 features)" },
             ].map(({ label, value }) => (

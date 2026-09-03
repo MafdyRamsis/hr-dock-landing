@@ -7,9 +7,8 @@ export const metadata: Metadata = {
   description: "HR Dock Terms and Conditions of Service",
 };
 
-const EFFECTIVE_DATE = "1 July 2025";
+const EFFECTIVE_DATE = "3 September 2026";
 const COMPANY_NAME = "HR Dock";
-const COMPANY_EMAIL = "legal@hrdock.com";
 
 export default function TermsPage() {
   return (
@@ -51,7 +50,7 @@ export default function TermsPage() {
             <ul>
               <li>Maintaining the confidentiality of your login credentials.</li>
               <li>All activity that occurs under your account.</li>
-              <li>Notifying {COMPANY_NAME} immediately at <a href={`mailto:${COMPANY_EMAIL}`} className="text-[#00B4B4] hover:underline">{COMPANY_EMAIL}</a> of any unauthorised access or security breach.</li>
+              <li>Notifying {COMPANY_NAME} promptly through the contact form on our website of any unauthorised access or security breach.</li>
             </ul>
             <p>Each workspace is tied to one Organisation. Sharing accounts across organisations is prohibited.</p>
           </Section>
@@ -85,7 +84,7 @@ export default function TermsPage() {
           </Section>
 
           <Section title="7. Service Availability">
-            <p>{COMPANY_NAME} targets a Service uptime of 99.9% measured monthly, excluding scheduled maintenance windows. Scheduled maintenance will be communicated at least 48 hours in advance.</p>
+            <p>{COMPANY_NAME} aims to keep the Service reliably available and to communicate material planned maintenance when reasonably practicable. Any binding service-level commitment must be stated in your signed customer order or service agreement.</p>
             <p>{COMPANY_NAME} is not liable for outages caused by third-party infrastructure providers, force majeure events, or actions outside our reasonable control.</p>
           </Section>
 
@@ -127,7 +126,7 @@ export default function TermsPage() {
             <p>
               <strong className="text-white">{COMPANY_NAME}</strong><br />
               Cairo, Egypt<br />
-              <a href={`mailto:${COMPANY_EMAIL}`} className="text-[#00B4B4] hover:underline">{COMPANY_EMAIL}</a>
+              <Link href="/#contact" className="text-[#00B4B4] hover:underline">Contact HR Dock</Link>
             </p>
           </Section>
 
