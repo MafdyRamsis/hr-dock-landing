@@ -75,12 +75,12 @@ app/
 
 ## Deployment
 
-Deployed on **Vercel** via GitHub auto-deploy. Every push to `main` triggers a new build.
+Deployed on **Vercel** via GitHub auto-deploy. Every push to `master` triggers a new build.
 
 Add `RESEND_API_KEY`, `DEMO_FROM_EMAIL`, and `DEMO_TO_EMAIL` to the Vercel project
 for Production and Preview. Verify the sending domain in Resend before using an
-`@hrdock.app` sender.
+`@hr-dock.com` sender.
 
 ```bash
-git push origin main
+git push origin master
 ```

@@ -47,7 +47,7 @@ export default function Hero() {
             <div className="w-3 h-3 rounded-full bg-yellow-400/80" />
             <div className="w-3 h-3 rounded-full bg-green-400/80" />
             <div className="flex-1 mx-4 h-5 bg-white/10 rounded text-white/30 text-xs flex items-center px-3">
-              app.hrdock.app/dashboard
+              app.hr-dock.com/dashboard
             </div>
           </div>
           {/* app shell */}

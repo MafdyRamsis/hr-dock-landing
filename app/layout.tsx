@@ -3,7 +3,7 @@ import "./globals.css";
 import { LanguageProvider } from "./context/LanguageContext";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hrdock.app"),
+  metadataBase: new URL("https://www.hr-dock.com"),
   title: "HR Dock — Modern HR Management for Egyptian Businesses",
   description:
     "HR Dock streamlines payroll, attendance, recruitment, and compliance — all in one platform built for the Egyptian market.",

@@ -10,7 +10,7 @@ function MockupShell({ children }: { children: React.ReactNode }) {
         <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
         <span className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
         <div className="flex-1 mx-3 h-4 rounded bg-white/10 flex items-center px-2 text-white/30 text-[9px]">
-          app.hrdock.app
+          app.hr-dock.com
         </div>
       </div>
       {/* app shell */}
@@ -209,7 +209,7 @@ export function MultiCompanyMockup() {
         <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
         <span className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
         <div className="flex-1 mx-3 h-4 rounded bg-white/10 flex items-center px-2 text-white/30 text-[9px]">
-          app.hrdock.app
+          app.hr-dock.com
         </div>
       </div>
       <div className="bg-[#1B2A4A] p-4 h-52">
