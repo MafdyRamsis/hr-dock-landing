@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "HR Dock Privacy Policy — how we collect, use, and protect your data",
 };
 
-const EFFECTIVE_DATE = "3 September 2026";
+const EFFECTIVE_DATE = "21 September 2026";
 
 export default function PrivacyPage() {
   return (
@@ -58,6 +58,16 @@ export default function PrivacyPage() {
 
             <p><strong className="text-white">3.4 Communications Data</strong></p>
             <p>If you contact our support team, we retain those communications to resolve your enquiry and improve our service quality.</p>
+
+            <p><strong className="text-white">3.5 Mobile App Data</strong></p>
+            <p>The HR Dock mobile app lets employees and managers use the platform from a phone. In addition to the data described above, the app handles the following:</p>
+            <ul>
+              <li><strong className="text-white">Location (only at clock-in and clock-out):</strong> When an employee clocks in or out, the app asks for permission to read the device&apos;s location once, converts it to a readable place name using the device&apos;s operating-system location services, and sends the coordinates and place name to HR Dock, where they are stored with that attendance record and made available to the employer. The app does not track location in the background or between clock-in and clock-out events. If location permission is declined, the employee can still use the rest of the app.</li>
+              <li><strong className="text-white">Push notification token:</strong> A device token is stored against the user account so that notifications (for example leave decisions and announcements) can be delivered. It is removed when the user signs out.</li>
+              <li><strong className="text-white">Biometric unlock:</strong> If the user turns it on, fingerprint or face unlock is performed by the device&apos;s operating system. HR Dock does not receive, collect, or store biometric data.</li>
+              <li><strong className="text-white">Session data:</strong> A sign-in token and basic profile details are kept in the device&apos;s secure storage to keep the user signed in, and are deleted on sign-out.</li>
+            </ul>
+            <p>The employer remains the data controller for data processed through the mobile app. Requests to access, correct, or delete that data follow Section 9.</p>
           </Section>
 
           <Section title="4. How We Use Your Data">
