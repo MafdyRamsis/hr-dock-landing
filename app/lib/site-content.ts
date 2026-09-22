@@ -24,6 +24,7 @@ export type SiteContent = {
     imageUrl: string;
   };
   pricing: {
+    currency: "EGP";
     eyebrow: string;
     title: string;
     subtitle: string;
@@ -53,14 +54,15 @@ export const defaultSiteContent: SiteContent = {
     imageUrl: "",
   },
   pricing: {
+    currency: "EGP",
     eyebrow: "Simple pricing",
     title: "Choose a plan that grows with you",
-    subtitle: "Transparent per-employee pricing with no surprise implementation fees.",
-    annualDiscount: "Save 20%",
+    subtitle: "Pricing is quoted in Egyptian pounds (EGP). Contact our team for a plan tailored to your company.",
+    annualDiscount: "",
     plans: [
-      { name: "Starter", description: "For small teams building strong foundations.", monthlyPrice: "9", annualPrice: "7", cta: "Start free", featured: false, features: ["Core employee records", "Leave management", "Document storage", "Employee self-service"] },
-      { name: "Growth", description: "For growing companies ready to automate.", monthlyPrice: "16", annualPrice: "13", cta: "Start free", featured: true, features: ["Everything in Starter", "Time & attendance", "Smart onboarding", "Advanced reports", "Priority support"] },
-      { name: "Enterprise", description: "For complex teams with custom needs.", monthlyPrice: "Custom", annualPrice: "Custom", cta: "Contact sales", featured: false, features: ["Everything in Growth", "Custom roles & workflows", "SSO and API access", "Dedicated success manager"] },
+      { name: "Starter", description: "For small teams building strong foundations.", monthlyPrice: "Contact sales", annualPrice: "Contact sales", cta: "Contact sales", featured: false, features: ["Core employee records", "Leave management", "Document storage", "Employee self-service"] },
+      { name: "Growth", description: "For growing companies ready to automate.", monthlyPrice: "Contact sales", annualPrice: "Contact sales", cta: "Contact sales", featured: true, features: ["Everything in Starter", "Time & attendance", "Smart onboarding", "Advanced reports", "Priority support"] },
+      { name: "Enterprise", description: "For complex teams with custom needs.", monthlyPrice: "Contact sales", annualPrice: "Contact sales", cta: "Contact sales", featured: false, features: ["Everything in Growth", "Custom roles & workflows", "SSO and API access", "Dedicated success manager"] },
     ],
   },
   clients: { title: "Built to grow with Egyptian businesses", subtitle: "Trusted by people-first teams building the future of work.", logos: [] },
@@ -72,11 +74,15 @@ const CONTENT_PATH = "cms/site-content.json";
 const LOCAL_PATH = path.join(process.cwd(), ".data", "site-content.json");
 
 function mergeContent(value: Partial<SiteContent>): SiteContent {
+  // Content published before the EGP switch held USD figures. Never relabel those figures as pounds.
+  const legacyPlans = value.pricing && !value.pricing.currency
+    ? value.pricing.plans?.map((plan) => ({ ...plan, monthlyPrice: "Contact sales", annualPrice: "Contact sales", cta: "Contact sales" }))
+    : undefined;
   return {
     ...defaultSiteContent,
     ...value,
     hero: { ...defaultSiteContent.hero, ...value.hero },
-    pricing: { ...defaultSiteContent.pricing, ...value.pricing, plans: value.pricing?.plans?.length ? value.pricing.plans : defaultSiteContent.pricing.plans },
+    pricing: { ...defaultSiteContent.pricing, ...value.pricing, currency: "EGP", annualDiscount: legacyPlans ? "" : (value.pricing?.annualDiscount ?? defaultSiteContent.pricing.annualDiscount), subtitle: legacyPlans ? defaultSiteContent.pricing.subtitle : (value.pricing?.subtitle ?? defaultSiteContent.pricing.subtitle), plans: legacyPlans?.length ? legacyPlans : value.pricing?.plans?.length ? value.pricing.plans : defaultSiteContent.pricing.plans },
     clients: { ...defaultSiteContent.clients, ...value.clients, logos: value.clients?.logos ?? defaultSiteContent.clients.logos },
     cta: { ...defaultSiteContent.cta, ...value.cta },
   };
