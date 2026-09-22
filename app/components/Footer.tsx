@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Logo className="mb-4 h-9 w-auto text-white" />
+            <div className="mb-4 inline-flex rounded-xl bg-white px-2.5 py-1.5"><Logo className="h-9 w-auto" /></div>
             <p className="max-w-xs text-sm leading-relaxed text-slate-400">
               {t("footer.tagline")} — {t("about.sub")}
             </p>
