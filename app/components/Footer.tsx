@@ -8,20 +8,20 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0f1923] border-t border-white/10 pt-12 pb-8">
-      <div className="max-w-6xl mx-auto px-6">
+    <footer className="border-t border-white/10 bg-slate-900 pb-8 pt-14 text-white">
+      <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Logo className="h-9 w-auto mb-3" />
-            <p className="text-white/40 text-sm leading-relaxed max-w-xs">
+            <Logo className="mb-4 h-9 w-auto text-white" />
+            <p className="max-w-xs text-sm leading-relaxed text-slate-400">
               {t("footer.tagline")} — {t("about.sub")}
             </p>
           </div>
 
           {/* Product links */}
           <div>
-            <div className="text-white/60 text-xs font-semibold uppercase tracking-wider mb-4">Product</div>
+            <div className="mb-4 text-xs font-semibold uppercase tracking-wider text-slate-300">Product</div>
             <ul className="space-y-2">
               {[
                 ["#products", t("products.m1.name")],
@@ -30,7 +30,7 @@ export default function Footer() {
                 ["#features", t("nav.features")],
               ].map(([href, label]) => (
                 <li key={label}>
-                  <a href={href} className="text-white/40 text-sm hover:text-[#00B4B4] transition-colors">{label}</a>
+                  <a href={href} className="text-sm text-slate-400 transition-colors hover:text-cyan-300">{label}</a>
                 </li>
               ))}
             </ul>
@@ -38,28 +38,28 @@ export default function Footer() {
 
           {/* Company links */}
           <div>
-            <div className="text-white/60 text-xs font-semibold uppercase tracking-wider mb-4">Company</div>
+            <div className="mb-4 text-xs font-semibold uppercase tracking-wider text-slate-300">Company</div>
             <ul className="space-y-2">
               {[
                 ["#about",   t("nav.about")],
-                ["#clients", t("nav.clients")],
+                ["#pricing", "Pricing"],
                 ["#contact", t("nav.contact")],
                 ["#contact", t("nav.demo")],
               ].map(([href, label]) => (
                 <li key={label}>
-                  <a href={href} className="text-white/40 text-sm hover:text-[#00B4B4] transition-colors">{label}</a>
+                  <a href={href} className="text-sm text-slate-400 transition-colors hover:text-cyan-300">{label}</a>
                 </li>
               ))}
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-white/30">
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-sm text-slate-500 sm:flex-row">
           <p>© {year} HR Dock. {t("footer.rights")}</p>
           <div className="flex items-center gap-6">
-            <Link href="/terms" className="hover:text-[#00B4B4] transition-colors">Terms & Conditions</Link>
-            <Link href="/privacy" className="hover:text-[#00B4B4] transition-colors">Privacy Policy</Link>
-            <p className="text-[#00B4B4]/60 text-xs">Built in Egypt 🇪🇬</p>
+            <Link href="/terms" className="transition-colors hover:text-cyan-300">Terms & Conditions</Link>
+            <Link href="/privacy" className="transition-colors hover:text-cyan-300">Privacy Policy</Link>
+            <p className="text-xs text-cyan-300/70">Built in Egypt 🇪🇬</p>
           </div>
         </div>
       </div>

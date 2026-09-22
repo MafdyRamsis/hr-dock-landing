@@ -1,75 +1,31 @@
 "use client";
+
 import { useLang } from "../context/LanguageContext";
 
-const values = [
-  { key: "about.v1", textKey: "about.v1.text", icon: "🎯" },
-  { key: "about.v2", textKey: "about.v2.text", icon: "🚀" },
-  { key: "about.v3", textKey: "about.v3.text", icon: "🤝" },
-];
-
 export default function About() {
-  const { t } = useLang();
-
+  const { lang, t } = useLang();
   return (
-    <section id="about" className="py-24 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left */}
-          <div>
-            <span className="inline-block bg-[#00B4B4]/10 text-[#00B4B4] text-xs font-semibold px-4 py-1.5 rounded-full mb-5 tracking-wide">
-              {t("about.sub")}
-            </span>
-            <h2 className="text-4xl font-bold text-[#1B2A4A] mb-6">{t("about.title")}</h2>
-            <p className="text-gray-500 leading-relaxed text-base">{t("about.body")}</p>
-
-            <div className="mt-10 space-y-5">
-              {values.map(({ key, textKey, icon }) => (
-                <div key={key} className="flex gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#1B2A4A] flex items-center justify-center text-xl shrink-0">
-                    {icon}
-                  </div>
-                  <div>
-                    <div className="font-bold text-[#1B2A4A] mb-1">{t(key)}</div>
-                    <div className="text-sm text-gray-500 leading-relaxed">{t(textKey)}</div>
-                  </div>
-                </div>
-              ))}
+    <section id="about" className="bg-white py-24 text-slate-900">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+        <div>
+          <p className="text-sm font-bold uppercase tracking-[.18em] text-indigo-600">{t("about.sub")}</p>
+          <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">{lang === "ar" ? "مصمم حول طريقة عمل فريقك" : "Built around the way your team works"}</h2>
+          <p className="mt-6 text-lg leading-8 text-slate-600">{t("about.body")}</p>
+          <a href="#contact" className="mt-8 inline-flex rounded-xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-indigo-500">{lang === "ar" ? "تحدث معنا" : "Talk to our team"} <span className="ms-2" aria-hidden="true">↗</span></a>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {[
+            [lang === "ar" ? "منظم" : "Organized", lang === "ar" ? "ملفات الموظفين والوثائق والطلبات في مكان واحد." : "People records, documents and requests in one place.", "01"],
+            [lang === "ar" ? "عملي" : "Practical", lang === "ar" ? "الحضور والإجازات والرواتب في سير عمل مترابط." : "Attendance, leave and payroll in a connected workflow.", "02"],
+            [lang === "ar" ? "قابل للتوسع" : "Ready to grow", lang === "ar" ? "أضف عمليات الموارد البشرية والتوظيف حسب الحاجة." : "Add HR operations and hiring as you need them.", "03"],
+            [lang === "ar" ? "مناسب لمصر" : "Egypt-focused", lang === "ar" ? "وصول بالعربية والإنجليزية وإعدادات قابلة للتهيئة." : "Arabic and English access with configurable settings.", "04"],
+          ].map(([title, detail, number]) => (
+            <div key={number} className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+              <span className="text-sm font-bold text-cyan-700">{number}</span>
+              <h3 className="mt-5 text-lg font-bold">{title}</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">{detail}</p>
             </div>
-          </div>
-
-          {/* Right: visual */}
-          <div className="rounded-2xl bg-[#1B2A4A] p-8 flex flex-col gap-6">
-            <div className="flex items-center gap-4 pb-6 border-b border-white/10">
-              <div className="w-14 h-14 rounded-2xl bg-[#00B4B4]/20 flex items-center justify-center text-3xl">🏢</div>
-              <div>
-                <div className="text-white font-bold text-lg">HR Dock</div>
-                <div className="text-[#00B4B4] text-sm">Empowering Your Workforce</div>
-              </div>
-            </div>
-
-            {[
-              { label: "Founded", value: "2024" },
-              { label: "Headquarters", value: "Cairo, Egypt 🇪🇬" },
-              { label: "Market", value: "Egyptian Private Sector" },
-              { label: "Configuration", value: "Egypt-focused payroll workflows" },
-              { label: "Languages", value: "Arabic & English" },
-              { label: "Modules", value: "3 (45 features)" },
-            ].map(({ label, value }) => (
-              <div key={label} className="flex items-center justify-between text-sm">
-                <span className="text-white/40">{label}</span>
-                <span className="text-white font-medium">{value}</span>
-              </div>
-            ))}
-
-            <div className="pt-6 border-t border-white/10">
-              <a
-                href="#contact"
-                className="block w-full text-center bg-[#E8604C] text-white font-semibold py-3 rounded-xl hover:bg-[#d45540] transition-colors"
-              >
-                Get in Touch →
-              </a>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

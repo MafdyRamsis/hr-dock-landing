@@ -1,145 +1,99 @@
 "use client";
+
 import Image from "next/image";
 import { useLang } from "../context/LanguageContext";
 import type { SiteContent } from "../lib/site-content";
+
+const bars = [42, 66, 53, 82, 71, 94, 76];
 
 export default function Hero({ content }: { content: SiteContent["hero"] }) {
   const { t, lang } = useLang();
   const english = lang === "en";
 
   return (
-    <section className="relative pt-28 pb-0 overflow-hidden bg-[#1B2A4A]">
-      {/* Background glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-[#00B4B4]/10 blur-3xl" />
-      </div>
-
-      <div className="relative max-w-6xl mx-auto px-6 text-center pb-16">
-        <span className="inline-block bg-[#00B4B4]/15 text-[#00B4B4] text-xs font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wide">
-          {english ? content.badge : t("hero.badge")}
-        </span>
-
-        <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6 whitespace-pre-line">
-          {english ? content.headline : t("hero.headline")}
-        </h1>
-
-        <p className="max-w-2xl mx-auto text-lg text-white/60 mb-10 leading-relaxed">
-          {english ? content.subtext : t("hero.sub")}
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center bg-[#E8604C] text-white font-semibold px-8 py-3.5 rounded-xl hover:bg-[#d45540] transition-colors shadow-lg shadow-[#E8604C]/20"
-          >
-            {english ? content.primaryCta : t("hero.cta1")}
-          </a>
-          <a
-            href="#daily-work"
-            className="inline-flex items-center justify-center bg-white/10 text-white font-semibold px-8 py-3.5 rounded-xl border border-white/20 hover:bg-white/15 transition-colors"
-          >
-            {english ? content.secondaryCta : t("hero.cta2")}
-          </a>
+    <section className="relative isolate overflow-hidden bg-slate-900 pb-24 pt-36 text-white md:pb-32 md:pt-44">
+      <div className="pointer-events-none absolute -top-56 left-1/2 -z-10 h-[650px] w-[900px] -translate-x-1/2 rounded-full bg-indigo-600/20 blur-3xl" />
+      <div className="pointer-events-none absolute -right-40 bottom-0 -z-10 h-[400px] w-[500px] rounded-full bg-cyan-400/10 blur-3xl" />
+      <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[.92fr_1.08fr] lg:gap-12">
+        <div className="max-w-2xl">
+          <span className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-semibold tracking-wide text-cyan-200">
+            <span className="h-2 w-2 rounded-full bg-cyan-300" />{english ? content.badge : t("hero.badge")}
+          </span>
+          <h1 className="mt-7 whitespace-pre-line text-5xl font-bold leading-[1.08] tracking-tight md:text-6xl">
+            {english ? content.headline : t("hero.headline")}
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
+            {english ? content.subtext : t("hero.sub")}
+          </p>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="#contact" className="inline-flex min-h-12 items-center justify-center rounded-xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-900/30 transition hover:-translate-y-0.5 hover:bg-indigo-500">
+              {english ? content.primaryCta : t("hero.cta1")} <span className="ms-2" aria-hidden="true">↗</span>
+            </a>
+            <a href="#daily-work" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10">
+              {english ? content.secondaryCta : t("hero.cta2")}
+            </a>
+          </div>
+          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-xs font-medium text-slate-400">
+            <span>✓ {english ? "Built for teams in Egypt" : "مصمم لفرق العمل في مصر"}</span>
+            <span>✓ {english ? "Arabic & English" : "العربية والإنجليزية"}</span>
+            <span>✓ {english ? "Web & mobile workflows" : "الويب والجوال"}</span>
+          </div>
         </div>
 
-        {content.imageUrl && (
-          <div className="relative mx-auto mb-8 aspect-[16/7] max-w-5xl overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
-            <Image src={content.imageUrl} alt="HR Dock product preview" fill priority sizes="(max-width: 1024px) 100vw, 1024px" className="object-cover" />
-          </div>
-        )}
-
-        {/* Dashboard mockup — full width, clipped at bottom */}
-        <div className="rounded-t-2xl border border-white/10 shadow-2xl overflow-hidden mx-auto max-w-5xl">
-          {/* browser bar */}
-          <div className="flex items-center gap-2 px-4 py-3 bg-[#0f1923]">
-            <div className="w-3 h-3 rounded-full bg-red-400/80" />
-            <div className="w-3 h-3 rounded-full bg-yellow-400/80" />
-            <div className="w-3 h-3 rounded-full bg-green-400/80" />
-            <div className="flex-1 mx-4 h-5 bg-white/10 rounded text-white/30 text-xs flex items-center px-3">
-              app.hr-dock.com/dashboard
+        <div className="relative mx-auto w-full max-w-[680px]">
+          <div className="absolute -inset-4 rounded-[2rem] border border-white/5 bg-white/[.03] blur-sm" />
+          <div className="relative overflow-hidden rounded-[1.6rem] border border-slate-200/15 bg-slate-100 shadow-2xl shadow-black/40">
+            <div className="flex h-10 items-center gap-2 border-b border-slate-200 bg-white px-4">
+              <span className="h-2.5 w-2.5 rounded-full bg-rose-300" /><span className="h-2.5 w-2.5 rounded-full bg-amber-300" /><span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
+              <span className="ms-3 rounded-md bg-slate-100 px-3 py-1 text-[10px] text-slate-400">app.hr-dock.com</span>
+              <span className="ms-auto rounded-full bg-indigo-50 px-2 py-1 text-[9px] font-bold text-indigo-600">{english ? "Preview" : "معاينة"}</span>
             </div>
-          </div>
-          {/* app shell */}
-          <div className="flex bg-[#f0f2f5]" style={{ minHeight: 280 }}>
-            {/* sidebar */}
-            <div className="w-48 bg-[#1B2A4A] flex flex-col py-4 shrink-0">
-              <div className="flex items-center gap-2 px-4 mb-6">
-                <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center text-xs font-bold text-[#00B4B4]">HR</div>
-                <div>
-                  <div className="text-xs font-bold text-white">HR Dock</div>
-                  <div className="text-[9px] text-white/40">HR MANAGEMENT</div>
-                </div>
+            {content.imageUrl ? (
+              <div className="relative aspect-[4/3] sm:aspect-[16/10]">
+                <Image src={content.imageUrl} alt="HR Dock product preview" fill priority sizes="(max-width: 1024px) 100vw, 680px" className="object-cover" />
               </div>
-              {[
-                { label: "Dashboard", active: true },
-                { label: "Requests", active: false },
-                { label: "Employees", active: false },
-                { label: "Time & Payroll", active: false },
-                { label: "Talent", active: false },
-                { label: "HR Operations", active: false },
-                { label: "Admin", active: false },
-              ].map(({ label, active }) => (
-                <div
-                  key={label}
-                  className={`mx-2 px-3 py-2 rounded-lg text-xs mb-0.5 ${
-                    active
-                      ? "bg-[#00B4B4]/20 text-[#00B4B4] font-semibold"
-                      : "text-white/50 hover:text-white/70"
-                  }`}
-                >
-                  {label}
-                </div>
-              ))}
-              <div className="mt-auto px-4 pt-4 border-t border-white/10 flex items-center gap-2">
-                <div className="w-7 h-7 rounded-full bg-[#E8604C] flex items-center justify-center text-white text-xs font-bold">MR</div>
-                <div>
-                  <div className="text-xs text-white font-medium">Mafdy Ramsis</div>
-                  <div className="text-[9px] text-[#00B4B4]">Admin</div>
-                </div>
-              </div>
-            </div>
-
-            {/* main content */}
-            <div className="flex-1 p-6">
-              <div className="text-lg font-bold text-[#1B2A4A] mb-4">Dashboard</div>
-              <div className="grid grid-cols-4 gap-4 mb-4">
-                {[
-                  { label: "Employees", value: "248", delta: "↑ 4%", color: "text-[#00B4B4]" },
-                  { label: "On Leave", value: "12", delta: "→ 0%", color: "text-gray-400" },
-                  { label: "Payroll Due", value: "EGP 1.2M", delta: "↑ 8%", color: "text-[#00B4B4]" },
-                  { label: "Open Roles", value: "7", delta: "↓ 2", color: "text-[#E8604C]" },
-                ].map((s) => (
-                  <div key={s.label} className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-                    <div className="text-xs text-gray-400 mb-1">{s.label}</div>
-                    <div className="text-xl font-bold text-[#1B2A4A]">{s.value}</div>
-                    <div className={`text-xs mt-1 ${s.color}`}>{s.delta}</div>
-                  </div>
-                ))}
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-                  <div className="text-xs font-semibold text-[#1B2A4A] mb-3">Headcount by Department</div>
-                  <div className="flex items-end gap-1.5 h-16">
-                    {[60, 80, 45, 90, 55, 70, 40].map((h, i) => (
-                      <div
-                        key={i}
-                        className="flex-1 rounded-t"
-                        style={{ height: `${h}%`, background: i % 2 === 0 ? "#00B4B4" : "#1B2A4A", opacity: 0.85 }}
-                      />
+            ) : (
+              <div className="flex min-h-[390px] text-slate-900">
+                <aside className="hidden w-28 shrink-0 bg-slate-900 px-3 py-5 sm:block">
+                  <span className="block text-xs font-bold text-cyan-300">HR Dock</span>
+                  <div className="mt-8 space-y-3">
+                    {["Overview", "People", "Attendance", "Leave", "Payroll", "Reports"].map((item, index) => (
+                      <div key={item} className={`rounded-md px-2 py-1.5 text-[9px] ${index === 0 ? "bg-indigo-500/20 font-semibold text-indigo-200" : "text-slate-400"}`}>{item}</div>
                     ))}
                   </div>
-                </div>
-                <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-                  <div className="text-xs font-semibold text-[#1B2A4A] mb-3">Recent Activity</div>
-                  {["Ahmed joined Engineering","Sara's leave approved","Payroll for June processed","7 new applicants"].map((item) => (
-                    <div key={item} className="text-xs text-gray-500 border-b border-gray-50 py-1 last:border-0 truncate">
-                      • {item}
+                </aside>
+                <div className="min-w-0 flex-1 p-4 sm:p-6">
+                  <div className="flex items-start justify-between gap-2">
+                    <div><p className="text-[10px] font-semibold uppercase tracking-widest text-indigo-500">{english ? "Workforce overview" : "نظرة عامة على الفريق"}</p><h2 className="mt-1 text-lg font-bold sm:text-xl">{english ? "Good morning, team" : "صباح الخير يا فريق"}</h2></div>
+                    <span className="rounded-lg border border-slate-200 bg-white px-2 py-1 text-[9px] text-slate-500">EGP · Egypt</span>
+                  </div>
+                  <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-3">
+                    {[["Present today", "92%", "↑ 4%"], ["Pending leave", "08", "Review"], ["Payroll status", "Ready", "This cycle"]].map(([label, value, note]) => (
+                      <div key={label} className="rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
+                        <p className="text-[9px] leading-3 text-slate-500">{label}</p><p className="mt-2 text-base font-bold sm:text-lg">{value}</p><p className="mt-1 text-[9px] font-semibold text-cyan-600">{note}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-3 grid gap-3 sm:grid-cols-[1.3fr_1fr]">
+                    <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                      <div className="flex justify-between text-[10px]"><span className="font-semibold">Attendance trend</span><span className="text-slate-400">This week</span></div>
+                      <div className="mt-5 flex h-20 items-end gap-2">{bars.map((height, index) => <div key={index} className="flex-1 rounded-t-md bg-gradient-to-t from-indigo-600 to-cyan-400" style={{ height: `${height}%` }} />)}</div>
+                      <div className="mt-2 flex justify-between text-[8px] text-slate-400"><span>Sat</span><span>Fri</span></div>
                     </div>
-                  ))}
+                    <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                      <p className="text-[10px] font-semibold">Today&apos;s work</p>
+                      <div className="mt-4 space-y-3 text-[10px] text-slate-600">
+                        <p><span className="me-2 text-cyan-500">●</span>Attendance synced</p>
+                        <p><span className="me-2 text-indigo-500">●</span>Leave requests to review</p>
+                        <p><span className="me-2 text-emerald-500">●</span>Payroll ready to check</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
+          <p className="mt-4 text-center text-[11px] text-slate-500">{english ? "Illustrative dashboard preview" : "معاينة توضيحية للوحة المعلومات"}</p>
         </div>
       </div>
     </section>

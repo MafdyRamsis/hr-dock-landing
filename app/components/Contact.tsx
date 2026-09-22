@@ -35,14 +35,14 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 bg-gray-50">
+    <section id="contact" className="bg-slate-50 py-24">
       <div className="max-w-2xl mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-[#1B2A4A] mb-4">{t("contact.title")}</h2>
+          <h2 className="mb-4 text-4xl font-bold text-slate-900">{t("contact.title")}</h2>
           <p className="text-lg text-gray-500">{t("contact.sub")}</p>
         </div>
 
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-xl p-8">
+        <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/60">
           {submitted ? (
             <div className="text-center py-12">
               <div className="w-16 h-16 bg-[#00B4B4]/10 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl text-[#00B4B4]">
@@ -82,6 +82,7 @@ export default function Contact() {
                   <label className="text-sm font-medium text-[#1B2A4A]">{t("contact.email")}</label>
                   <input
                     required
+                    id="contact-email"
                     name="email"
                     type="email"
                     autoComplete="email"
@@ -125,7 +126,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="mt-2 bg-[#E8604C] text-white font-semibold py-3 rounded-xl hover:bg-[#d45540] transition-colors shadow-lg shadow-[#E8604C]/20 disabled:cursor-not-allowed disabled:opacity-60"
+                className="mt-2 rounded-xl bg-indigo-600 py-3 font-semibold text-white shadow-lg shadow-indigo-900/10 transition-colors hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {submitting ? t("contact.sending") : t("contact.submit")}
               </button>
