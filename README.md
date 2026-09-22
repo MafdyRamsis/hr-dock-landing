@@ -70,6 +70,21 @@ app/
 | `/` | Main landing page — product overview, features, pricing |
 | `/privacy` | Privacy policy |
 | `/terms` | Terms of service |
+| `/admin` | Password-protected homepage content editor |
+
+## Website Admin
+
+The `/admin` page manages homepage hero content, pricing plans, client logos,
+uploaded imagery, and the main call to action. Configure `ADMIN_PASSWORD` and a
+random `ADMIN_SESSION_SECRET` of at least 32 characters.
+
+For production, connect a Vercel Blob store to the project. Vercel supplies
+`BLOB_READ_WRITE_TOKEN`; published content and uploaded images then persist
+across deployments. Without a Blob token, local development uses `.data/` and
+`public/uploads/` as a development-only fallback.
+
+Admin sessions use an HTTP-only, secure, same-site cookie and expire after eight
+hours. Uploaded images are restricted to JPG, PNG, WebP, or SVG files up to 5 MB.
 
 ---
 

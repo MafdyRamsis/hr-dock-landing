@@ -8,18 +8,26 @@ import Features from "./components/Features";
 import Clients from "./components/Clients";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Pricing from "./components/Pricing";
+import ManagedCta from "./components/ManagedCta";
+import { getSiteContent } from "./lib/site-content";
 
-export default function Home() {
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+  const content = await getSiteContent();
   return (
     <main className="flex flex-col min-h-screen">
       <Navbar />
-      <Hero />
+      <Hero content={content.hero} />
       <Stats />
       <About />
       <Products />
       <AICallout />
       <Features />
-      <Clients />
+      <Clients content={content.clients} />
+      <Pricing content={content.pricing} />
+      <ManagedCta content={content.cta} />
       <Contact />
       <Footer />
     </main>

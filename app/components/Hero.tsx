@@ -1,8 +1,11 @@
 "use client";
+import Image from "next/image";
 import { useLang } from "../context/LanguageContext";
+import type { SiteContent } from "../lib/site-content";
 
-export default function Hero() {
-  const { t } = useLang();
+export default function Hero({ content }: { content: SiteContent["hero"] }) {
+  const { t, lang } = useLang();
+  const english = lang === "en";
 
   return (
     <section className="relative pt-28 pb-0 overflow-hidden bg-[#1B2A4A]">
@@ -13,15 +16,15 @@ export default function Hero() {
 
       <div className="relative max-w-6xl mx-auto px-6 text-center pb-16">
         <span className="inline-block bg-[#00B4B4]/15 text-[#00B4B4] text-xs font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wide">
-          {t("hero.badge")}
+          {english ? content.badge : t("hero.badge")}
         </span>
 
         <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6 whitespace-pre-line">
-          {t("hero.headline")}
+          {english ? content.headline : t("hero.headline")}
         </h1>
 
         <p className="max-w-2xl mx-auto text-lg text-white/60 mb-10 leading-relaxed">
-          {t("hero.sub")}
+          {english ? content.subtext : t("hero.sub")}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -29,15 +32,21 @@ export default function Hero() {
             href="#contact"
             className="inline-flex items-center justify-center bg-[#E8604C] text-white font-semibold px-8 py-3.5 rounded-xl hover:bg-[#d45540] transition-colors shadow-lg shadow-[#E8604C]/20"
           >
-            {t("hero.cta1")}
+            {english ? content.primaryCta : t("hero.cta1")}
           </a>
           <a
             href="#features"
             className="inline-flex items-center justify-center bg-white/10 text-white font-semibold px-8 py-3.5 rounded-xl border border-white/20 hover:bg-white/15 transition-colors"
           >
-            {t("hero.cta2")}
+            {english ? content.secondaryCta : t("hero.cta2")}
           </a>
         </div>
+
+        {content.imageUrl && (
+          <div className="relative mx-auto mb-8 aspect-[16/7] max-w-5xl overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+            <Image src={content.imageUrl} alt="HR Dock product preview" fill priority sizes="(max-width: 1024px) 100vw, 1024px" className="object-cover" />
+          </div>
+        )}
 
         {/* Dashboard mockup — full width, clipped at bottom */}
         <div className="rounded-t-2xl border border-white/10 shadow-2xl overflow-hidden mx-auto max-w-5xl">
