@@ -74,17 +74,52 @@ const CONTENT_PATH = "cms/site-content.json";
 const LOCAL_PATH = path.join(process.cwd(), ".data", "site-content.json");
 
 function mergeContent(value: Partial<SiteContent>): SiteContent {
+  // Refresh only the original stock copy in previously published CMS content.
+  // Anything an admin actually changed (including images and prices) stays intact.
+  const hero = { ...value.hero };
+  if (hero.badge === "Built for Egyptian Businesses") hero.badge = defaultSiteContent.hero.badge;
+  if (hero.headline === "Where Modern HR Docks & Workforces Thrive") hero.headline = defaultSiteContent.hero.headline;
+  if (hero.subtext === "HR Dock streamlines payroll, attendance, recruitment, and compliance — all in one platform built for the Egyptian market.") hero.subtext = defaultSiteContent.hero.subtext;
+  if (hero.secondaryCta === "See How It Works") hero.secondaryCta = defaultSiteContent.hero.secondaryCta;
+  const pricing = { ...value.pricing };
+  if (pricing.eyebrow === "Simple pricing") pricing.eyebrow = defaultSiteContent.pricing.eyebrow;
+  if (pricing.title === "Choose a plan that grows with you") pricing.title = defaultSiteContent.pricing.title;
+  if (pricing.subtitle === "Pricing is quoted in Egyptian pounds (EGP). Contact our team for a plan tailored to your company.") pricing.subtitle = defaultSiteContent.pricing.subtitle;
+  const oldPlanFeatures: Record<string, string[]> = {
+    Starter: ["Core employee records", "Leave management", "Document storage", "Employee self-service"],
+    Growth: ["Everything in Starter", "Time & attendance", "Smart onboarding", "Advanced reports", "Priority support"],
+    Enterprise: ["Everything in Growth", "Custom roles & workflows", "SSO and API access", "Dedicated success manager"],
+  };
+  const oldPlanDescriptions: Record<string, string> = {
+    Starter: "For small teams building strong foundations.",
+    Growth: "For growing companies ready to automate.",
+    Enterprise: "For complex teams with custom needs.",
+  };
+  if (pricing.plans) {
+    pricing.plans = pricing.plans.map((plan) => {
+      const stock = defaultSiteContent.pricing.plans.find((item) => item.name === plan.name);
+      if (!stock) return plan;
+      return {
+        ...plan,
+        description: plan.description === oldPlanDescriptions[plan.name] ? stock.description : plan.description,
+        features: JSON.stringify(plan.features) === JSON.stringify(oldPlanFeatures[plan.name]) ? stock.features : plan.features,
+      };
+    });
+  }
+  const cta = { ...value.cta };
+  if (cta.title === "Make work feel better—for everyone.") cta.title = defaultSiteContent.cta.title;
+  if (cta.subtitle === "Replace fragmented HR processes with one beautifully simple platform.") cta.subtitle = defaultSiteContent.cta.subtitle;
   // Content published before the EGP switch held USD figures. Never relabel those figures as pounds.
-  const legacyPlans = value.pricing && !value.pricing.currency
-    ? value.pricing.plans?.map((plan) => ({ ...plan, monthlyPrice: "Contact sales", annualPrice: "Contact sales", cta: "Contact sales" }))
+  const legacyPlans = pricing && !pricing.currency
+    ? pricing.plans?.map((plan) => ({ ...plan, monthlyPrice: "Contact sales", annualPrice: "Contact sales", cta: "Contact sales" }))
     : undefined;
   return {
     ...defaultSiteContent,
     ...value,
-    hero: { ...defaultSiteContent.hero, ...value.hero },
-    pricing: { ...defaultSiteContent.pricing, ...value.pricing, currency: "EGP", annualDiscount: legacyPlans ? "" : (value.pricing?.annualDiscount ?? defaultSiteContent.pricing.annualDiscount), subtitle: legacyPlans ? defaultSiteContent.pricing.subtitle : (value.pricing?.subtitle ?? defaultSiteContent.pricing.subtitle), plans: legacyPlans?.length ? legacyPlans : value.pricing?.plans?.length ? value.pricing.plans : defaultSiteContent.pricing.plans },
+    hero: { ...defaultSiteContent.hero, ...hero },
+    pricing: { ...defaultSiteContent.pricing, ...pricing, currency: "EGP", annualDiscount: legacyPlans ? "" : (pricing?.annualDiscount ?? defaultSiteContent.pricing.annualDiscount), subtitle: legacyPlans ? defaultSiteContent.pricing.subtitle : (pricing?.subtitle ?? defaultSiteContent.pricing.subtitle), plans: legacyPlans?.length ? legacyPlans : pricing?.plans?.length ? pricing.plans : defaultSiteContent.pricing.plans },
     clients: { ...defaultSiteContent.clients, ...value.clients, logos: value.clients?.logos ?? defaultSiteContent.clients.logos },
-    cta: { ...defaultSiteContent.cta, ...value.cta },
+    cta: { ...defaultSiteContent.cta, ...cta },
   };
 }
 
