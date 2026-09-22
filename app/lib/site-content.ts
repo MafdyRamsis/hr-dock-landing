@@ -60,9 +60,9 @@ export const defaultSiteContent: SiteContent = {
     subtitle: "Pricing is quoted in Egyptian pounds (EGP). Contact our team for a plan tailored to your company.",
     annualDiscount: "",
     plans: [
-      { name: "Starter", description: "For small teams building strong foundations.", monthlyPrice: "Contact sales", annualPrice: "Contact sales", cta: "Contact sales", featured: false, features: ["Core employee records", "Leave management", "Document storage", "Employee self-service"] },
-      { name: "Growth", description: "For growing companies ready to automate.", monthlyPrice: "Contact sales", annualPrice: "Contact sales", cta: "Contact sales", featured: true, features: ["Everything in Starter", "Time & attendance", "Smart onboarding", "Advanced reports", "Priority support"] },
-      { name: "Enterprise", description: "For complex teams with custom needs.", monthlyPrice: "Contact sales", annualPrice: "Contact sales", cta: "Contact sales", featured: false, features: ["Everything in Growth", "Custom roles & workflows", "SSO and API access", "Dedicated success manager"] },
+      { name: "Starter", description: "People, attendance and payroll essentials.", monthlyPrice: "Contact sales", annualPrice: "Contact sales", cta: "Contact sales", featured: false, features: ["Employee records", "Attendance, shifts and leave", "Payroll and payslips", "Overtime, loans and expenses"] },
+      { name: "Growth", description: "The full employee lifecycle for growing teams.", monthlyPrice: "Contact sales", annualPrice: "Contact sales", cta: "Contact sales", featured: true, features: ["Everything in Starter", "Onboarding, documents and assets", "Training and performance", "Helpdesk, surveys and workflows"] },
+      { name: "Enterprise", description: "HR operations plus hiring and AI tools.", monthlyPrice: "Contact sales", annualPrice: "Contact sales", cta: "Contact sales", featured: false, features: ["Everything in Growth", "Recruitment pipeline", "AI candidate screening", "Assessments and talent pool"] },
     ],
   },
   clients: { title: "Built to grow with Egyptian businesses", subtitle: "Trusted by people-first teams building the future of work.", logos: [] },

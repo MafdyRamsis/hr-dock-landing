@@ -16,6 +16,7 @@ export default function Navbar() {
           <a href="#about"    className="text-sm text-white/70 hover:text-[#00B4B4] transition-colors">{t("nav.about")}</a>
           <a href="#products" className="text-sm text-white/70 hover:text-[#00B4B4] transition-colors">{t("nav.products")}</a>
           <a href="#features" className="text-sm text-white/70 hover:text-[#00B4B4] transition-colors">{t("nav.features")}</a>
+          <a href="#pricing" className="text-sm text-white/70 hover:text-[#00B4B4] transition-colors">{lang === "ar" ? "الباقات" : "Pricing"}</a>
           <a href="#clients"  className="text-sm text-white/70 hover:text-[#00B4B4] transition-colors">{t("nav.clients")}</a>
           <a href="#contact"  className="text-sm text-white/70 hover:text-[#00B4B4] transition-colors">{t("nav.contact")}</a>
         </div>
