@@ -4,17 +4,17 @@ import { LanguageProvider } from "./context/LanguageContext";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.hr-dock.com"),
-  title: "HR Dock — Modern HR Management for Egyptian Businesses",
+  title: "HR Dock — Everyday HR for Egyptian Employers",
   description:
-    "HR Dock streamlines payroll, attendance, recruitment, and compliance — all in one platform built for the Egyptian market.",
+    "Manage attendance, leave, employee requests, payroll, and people records in one place, with workflows built for teams in Egypt.",
   applicationName: "HR Dock",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "en_EG",
     siteName: "HR Dock",
-    title: "HR Dock — Modern HR Management for Egyptian Businesses",
-    description: "Payroll, attendance, recruitment, and HR operations for Egyptian businesses.",
+    title: "HR Dock — Everyday HR for Egyptian Employers",
+    description: "Attendance, leave, employee requests, payroll, and people records for teams in Egypt.",
     url: "/",
   },
   robots: { index: true, follow: true },

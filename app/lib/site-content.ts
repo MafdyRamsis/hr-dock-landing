@@ -46,18 +46,18 @@ export type SiteContent = {
 
 export const defaultSiteContent: SiteContent = {
   hero: {
-    badge: "Built for Egyptian Businesses",
-    headline: "Where Modern HR Docks & Workforces Thrive",
-    subtext: "HR Dock streamlines payroll, attendance, recruitment, and compliance — all in one platform built for the Egyptian market.",
+    badge: "Built around the Egyptian workday",
+    headline: "Your everyday HR, finally in one place.",
+    subtext: "Track attendance, manage leave and employee requests, prepare payroll, and keep your people records together — with workflows built for teams in Egypt.",
     primaryCta: "Request a Demo",
-    secondaryCta: "See How It Works",
+    secondaryCta: "Explore daily workflows",
     imageUrl: "",
   },
   pricing: {
     currency: "EGP",
-    eyebrow: "Simple pricing",
-    title: "Choose a plan that grows with you",
-    subtitle: "Pricing is quoted in Egyptian pounds (EGP). Contact our team for a plan tailored to your company.",
+    eyebrow: "Plans for your team",
+    title: "Start with daily HR. Add more as you grow.",
+    subtitle: "Tell us your team size and workflows. We’ll recommend a plan and quote it in Egyptian pounds (EGP).",
     annualDiscount: "",
     plans: [
       { name: "Starter", description: "People, attendance and payroll essentials.", monthlyPrice: "Contact sales", annualPrice: "Contact sales", cta: "Contact sales", featured: false, features: ["Employee records", "Attendance, shifts and leave", "Payroll and payslips", "Overtime, loans and expenses"] },
@@ -66,7 +66,7 @@ export const defaultSiteContent: SiteContent = {
     ],
   },
   clients: { title: "Built to grow with Egyptian businesses", subtitle: "Trusted by people-first teams building the future of work.", logos: [] },
-  cta: { title: "Make work feel better—for everyone.", subtitle: "Replace fragmented HR processes with one beautifully simple platform.", button: "Book your demo" },
+  cta: { title: "See your daily HR workflow in one place.", subtitle: "Walk through attendance, requests, payroll, and employee records using the way your team works.", button: "Book your demo" },
   updatedAt: new Date(0).toISOString(),
 };
 

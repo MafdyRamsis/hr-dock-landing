@@ -21,10 +21,10 @@ export default async function Home() {
       <Navbar />
       <Hero content={content.hero} />
       <Stats />
-      <About />
       <Products />
-      <AICallout />
       <Features />
+      <AICallout />
+      <About />
       <Clients content={content.clients} />
       <Pricing content={content.pricing} />
       <ManagedCta content={content.cta} />

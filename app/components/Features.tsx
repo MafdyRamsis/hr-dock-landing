@@ -10,12 +10,12 @@ import {
 } from "./FeatureMockups";
 
 const featureDefs = [
-  { key: "payroll",      icon: "💰", reverse: false, Mockup: PayrollMockup },
-  { key: "attendance",   icon: "📅", reverse: true,  Mockup: AttendanceMockup },
-  { key: "recruitment",  icon: "🎯", reverse: false, Mockup: RecruitmentMockup },
+  { key: "attendance",   icon: "📅", reverse: false, Mockup: AttendanceMockup },
+  { key: "payroll",      icon: "💰", reverse: true,  Mockup: PayrollMockup },
+  { key: "mobile",       icon: "📱", reverse: false, Mockup: MobileAppMockup },
   { key: "analytics",    icon: "📊", reverse: true,  Mockup: AnalyticsMockup },
   { key: "multitenancy", icon: "🏢", reverse: false, Mockup: MultiCompanyMockup },
-  { key: "mobile",       icon: "📱", reverse: true,  Mockup: MobileAppMockup },
+  { key: "recruitment",  icon: "🎯", reverse: true,  Mockup: RecruitmentMockup },
 ];
 
 export default function Features() {
@@ -52,10 +52,6 @@ export default function Features() {
                 <p className="text-white/60 leading-relaxed text-base">
                   {t(`features.${key}.desc`)}
                 </p>
-                <div className="mt-6 flex items-center gap-2 text-[#00B4B4] text-sm font-semibold cursor-pointer group">
-                  <span>Learn more</span>
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </div>
               </div>
 
               {/* Mockup */}

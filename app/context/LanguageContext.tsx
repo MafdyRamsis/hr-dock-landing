@@ -16,20 +16,20 @@ const translations: Record<string, Record<Lang, string>> = {
   "nav.demo": { en: "Request Demo", ar: "طلب عرض" },
 
   // Hero
-  "hero.badge": { en: "Built for Egyptian Businesses", ar: "مصمم للشركات المصرية" },
-  "hero.headline": { en: "Modern HR Management,\nSimplified.", ar: "إدارة الموارد البشرية\nبشكل حديث ومبسّط." },
+  "hero.badge": { en: "Built around the Egyptian workday", ar: "مصمم ليوم العمل في مصر" },
+  "hero.headline": { en: "Your everyday HR, finally in one place.", ar: "إدارة الموارد البشرية اليومية، أخيراً في مكان واحد." },
   "hero.sub": {
-    en: "HR Dock streamlines payroll, attendance, recruitment, and compliance — all in one platform built for the Egyptian market.",
-    ar: "HR Dock يبسّط الرواتب والحضور والتوظيف والامتثال — كل ذلك في منصة واحدة مصمّمة للسوق المصري.",
+    en: "Track attendance, manage leave and employee requests, prepare payroll, and keep your people records together — with workflows built for teams in Egypt.",
+    ar: "تابع الحضور، وأدر الإجازات وطلبات الموظفين، وجهّز الرواتب، واحتفظ بملفات فريقك في مكان واحد — بسير عمل يناسب فرق العمل في مصر.",
   },
   "hero.cta1": { en: "Request a Demo", ar: "اطلب عرضاً توضيحياً" },
-  "hero.cta2": { en: "See How It Works", ar: "شاهد كيف يعمل" },
+  "hero.cta2": { en: "Explore daily workflows", ar: "استكشف سير العمل اليومي" },
 
   // Features
-  "features.title": { en: "Everything your HR team needs", ar: "كل ما يحتاجه فريق الموارد البشرية" },
+  "features.title": { en: "Built for the work your team does every day", ar: "مصمم للعمل الذي ينجزه فريقك كل يوم" },
   "features.sub": {
-    en: "One platform to manage your entire workforce lifecycle.",
-    ar: "منصة واحدة لإدارة دورة حياة القوى العاملة بالكامل.",
+    en: "Start with the essentials. Extend into reporting, mobile access, and hiring when you need them.",
+    ar: "ابدأ بالأساسيات، ثم أضف التقارير والوصول عبر الجوال والتوظيف عندما تحتاج إليها.",
   },
   "features.payroll.title": { en: "Smart Payroll", ar: "رواتب ذكية" },
   "features.payroll.desc": {
@@ -103,8 +103,8 @@ const translations: Record<string, Record<Lang, string>> = {
   "ai.cta": { en: "See AI in Action", ar: "شاهد الذكاء الاصطناعي" },
 
   // Products
-  "products.title": { en: "Three Modules. One Platform.", ar: "ثلاث وحدات. منصة واحدة." },
-  "products.sub": { en: "Start with what you need. Expand as you grow. Every module builds on the last.", ar: "ابدأ بما تحتاجه. توسّع مع نموك. كل وحدة تبني على السابقة." },
+  "products.title": { en: "Start with the daily essentials. Grow from there.", ar: "ابدأ بأساسيات العمل اليومي، ثم توسّع." },
+  "products.sub": { en: "People and payroll first. Add the employee lifecycle and hiring tools as your team needs them. Every module builds on the last.", ar: "ابدأ بإدارة الأفراد والرواتب، ثم أضف أدوات دورة حياة الموظف والتوظيف حسب احتياج فريقك. كل وحدة تشمل ما قبلها." },
   "products.m1.name": { en: "Payroll & Attendance", ar: "الرواتب والحضور" },
   "products.m1.tag": { en: "Module 1", ar: "الوحدة الأولى" },
   "products.m1.sub": { en: "الرواتب والحضور", ar: "الرواتب والحضور" },
@@ -120,14 +120,14 @@ const translations: Record<string, Record<Lang, string>> = {
 
   // About
   "about.title": { en: "About HR Dock", ar: "عن HR Dock" },
-  "about.sub": { en: "Built in Egypt, for Egypt.", ar: "صُنع في مصر، لمصر." },
-  "about.body": { en: "HR Dock was built by a team of HR professionals and engineers who lived the pain of outdated, expensive HR tools that don't understand the Egyptian market — NOSS compliance, Arabic workflows, multi-company structures, and the nuances of local labor law. We built the platform we always wanted.", ar: "بنى HR Dock فريق من متخصصي الموارد البشرية والمهندسين الذين عاشوا معاناة الأدوات القديمة والمكلفة التي لا تفهم السوق المصري — امتثال NOSS وسير العمل بالعربية وهياكل متعددة الشركات وتفاصيل قانون العمل المحلي." },
+  "about.sub": { en: "Built for teams working in Egypt.", ar: "مصمم لفرق العمل في مصر." },
+  "about.body": { en: "HR Dock brings the everyday work of HR together: employee records, attendance, leave, requests, and payroll. Arabic and English access, multi-company structures, and configurable payroll settings help teams adapt the platform to the way they operate in Egypt.", ar: "يجمع HR Dock أعمال الموارد البشرية اليومية: ملفات الموظفين والحضور والإجازات والطلبات والرواتب. يساعد الوصول بالعربية والإنجليزية، ودعم الشركات المتعددة، وإعدادات الرواتب القابلة للتهيئة الفرق على استخدام المنصة بما يناسب عملها في مصر." },
   "about.v1": { en: "Mission", ar: "المهمة" },
-  "about.v1.text": { en: "Make world-class HR software accessible to every Egyptian business, regardless of size.", ar: "جعل برامج الموارد البشرية عالمية المستوى في متناول كل شركة مصرية بصرف النظر عن حجمها." },
+  "about.v1.text": { en: "Make the daily work of HR clearer and easier for Egyptian employers and employees.", ar: "تبسيط العمل اليومي للموارد البشرية لأصحاب الأعمال والموظفين في مصر." },
   "about.v2": { en: "Vision", ar: "الرؤية" },
-  "about.v2.text": { en: "Become the HR backbone of the Egyptian private sector by 2027.", ar: "أن نصبح العمود الفقري للموارد البشرية في القطاع الخاص المصري بحلول عام 2027." },
+  "about.v2.text": { en: "Help growing teams move from scattered spreadsheets and messages to connected workflows.", ar: "مساعدة الفرق المتنامية على الانتقال من الجداول والرسائل المتفرقة إلى سير عمل مترابط." },
   "about.v3": { en: "Values", ar: "القيم" },
-  "about.v3.text": { en: "Transparency, compliance, simplicity — and always putting people first.", ar: "الشفافية والامتثال والبساطة — ووضع الناس دائماً في المقدمة." },
+  "about.v3.text": { en: "Clarity, practicality, and people-first service.", ar: "الوضوح والعملية وخدمة تضع الإنسان أولاً." },
 
   // Clients & Partners
   "clients.title": { en: "Built to grow with Egyptian businesses", ar: "مصمم لينمو مع الشركات المصرية" },

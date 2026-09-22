@@ -35,7 +35,7 @@ export default function Hero({ content }: { content: SiteContent["hero"] }) {
             {english ? content.primaryCta : t("hero.cta1")}
           </a>
           <a
-            href="#features"
+            href="#daily-work"
             className="inline-flex items-center justify-center bg-white/10 text-white font-semibold px-8 py-3.5 rounded-xl border border-white/20 hover:bg-white/15 transition-colors"
           >
             {english ? content.secondaryCta : t("hero.cta2")}
