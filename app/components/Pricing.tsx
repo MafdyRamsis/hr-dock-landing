@@ -16,8 +16,8 @@ export default function Pricing({ content }: { content: SiteContent["pricing"] }
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-bold uppercase tracking-[.18em] text-indigo-600">{lang === "ar" ? "باقات تناسب فريقك · الأسعار بالجنيه المصري" : `${content.eyebrow} · Quotes in EGP`}</p>
-          <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">{lang === "ar" ? "ابدأ بأساسيات الموارد البشرية ثم توسّع" : content.title}</h2>
-          <p className="mt-5 text-lg leading-8 text-slate-600">{lang === "ar" ? "أخبرنا بحجم فريقك وسير العمل المطلوب. سنقترح الباقة المناسبة ونقدم عرض سعر بالجنيه المصري." : content.subtitle}</p>
+          <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">{lang === "ar" ? "ابدأ من العقبة التي تستهلك وقت فريقك." : content.title}</h2>
+          <p className="mt-5 text-lg leading-8 text-slate-600">{lang === "ar" ? "أخبرنا بعدد الموظفين والفروع وطريقة العمل الحالية. سنعرض المهام المناسبة ونقدم عرض سعر بالجنيه المصري وفقاً لاحتياجك." : content.subtitle}</p>
           {hasRates && <div className="mt-8 inline-flex rounded-xl border border-slate-200 bg-slate-100 p-1" role="group" aria-label="Billing period">
             <button type="button" aria-pressed={!annual} onClick={() => setAnnual(false)} className={`rounded-lg px-5 py-2 text-sm font-semibold transition ${!annual ? "bg-white text-slate-900 shadow-sm" : "text-slate-500"}`}>{lang === "ar" ? "شهري" : "Monthly"}</button>
             <button type="button" aria-pressed={annual} onClick={() => setAnnual(true)} className={`rounded-lg px-5 py-2 text-sm font-semibold transition ${annual ? "bg-white text-slate-900 shadow-sm" : "text-slate-500"}`}>{lang === "ar" ? "سنوي" : "Annual"} {content.annualDiscount && <span className="ms-1 rounded-full bg-cyan-100 px-2 py-0.5 text-xs text-cyan-800">{content.annualDiscount}</span>}</button>

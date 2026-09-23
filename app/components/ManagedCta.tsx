@@ -23,8 +23,8 @@ export default function ManagedCta({ content }: { content: SiteContent["cta"] })
         <div className="pointer-events-none absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-indigo-500/30 blur-3xl" />
         <div className="relative mx-auto max-w-2xl">
           <span className="rounded-full border border-cyan-300/25 bg-cyan-300/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-cyan-200">{lang === "ar" ? "ابدأ الحوار" : "Let's talk"}</span>
-          <h2 className="mt-7 text-4xl font-bold tracking-tight md:text-5xl">{lang === "ar" ? "شاهد سير عمل الموارد البشرية في مكان واحد" : content.title}</h2>
-          <p className="mx-auto mt-5 max-w-xl text-lg leading-8 text-slate-300">{lang === "ar" ? "استعرض الحضور والطلبات والرواتب وملفات الموظفين بالطريقة التي يعمل بها فريقك." : content.subtitle}</p>
+          <h2 className="mt-7 text-4xl font-bold tracking-tight md:text-5xl">{lang === "ar" ? "حدثنا عن أكثر أيام الموارد البشرية ازدحاماً." : content.title}</h2>
+          <p className="mx-auto mt-5 max-w-xl text-lg leading-8 text-slate-300">{lang === "ar" ? "تغييرات الورديات أو موافقات الإجازات أو إغلاق الرواتب أو الملفات الناقصة—أرنا أين يتعطل العمل، وسنستعرض سير العمل المناسب في HR Dock." : content.subtitle}</p>
           <form onSubmit={continueToContact} className="mx-auto mt-9 flex max-w-lg flex-col gap-3 rounded-2xl border border-white/15 bg-white/10 p-2 backdrop-blur sm:flex-row">
             <label htmlFor="cta-email" className="sr-only">{lang === "ar" ? "البريد الإلكتروني للعمل" : "Work email"}</label>
             <input ref={emailInput} id="cta-email" type="email" required autoComplete="email" placeholder={lang === "ar" ? "بريدك الإلكتروني للعمل" : "Your work email"} className="min-h-12 min-w-0 flex-1 rounded-xl border-0 bg-white px-4 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-cyan-300" />

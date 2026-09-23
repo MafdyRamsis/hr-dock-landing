@@ -11,7 +11,7 @@ export default function Hero({ content }: { content: SiteContent["hero"] }) {
   const english = lang === "en";
 
   return (
-    <section className="relative isolate overflow-hidden bg-slate-900 pb-24 pt-36 text-white md:pb-32 md:pt-44">
+    <section className="relative isolate overflow-hidden bg-slate-900 pb-24 pt-40 text-white md:pb-32 md:pt-52">
       <div className="pointer-events-none absolute -top-56 left-1/2 -z-10 h-[650px] w-[900px] -translate-x-1/2 rounded-full bg-indigo-600/20 blur-3xl" />
       <div className="pointer-events-none absolute -right-40 bottom-0 -z-10 h-[400px] w-[500px] rounded-full bg-cyan-400/10 blur-3xl" />
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[.92fr_1.08fr] lg:gap-12">
@@ -64,11 +64,11 @@ export default function Hero({ content }: { content: SiteContent["hero"] }) {
                 </aside>
                 <div className="min-w-0 flex-1 p-4 sm:p-6">
                   <div className="flex items-start justify-between gap-2">
-                    <div><p className="text-[10px] font-semibold uppercase tracking-widest text-indigo-500">{english ? "Workforce overview" : "نظرة عامة على الفريق"}</p><h2 className="mt-1 text-lg font-bold sm:text-xl">{english ? "Good morning, team" : "صباح الخير يا فريق"}</h2></div>
+                    <div><p className="text-[10px] font-semibold uppercase tracking-widest text-indigo-500">{english ? "Payroll preparation" : "التحضير للرواتب"}</p><h2 className="mt-1 text-lg font-bold sm:text-xl">{english ? "Know what's ready to review" : "اعرف ما يحتاج إلى المراجعة"}</h2></div>
                     <span className="rounded-lg border border-slate-200 bg-white px-2 py-1 text-[9px] text-slate-500">EGP · Egypt</span>
                   </div>
                   <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-3">
-                    {[["Present today", "92%", "↑ 4%"], ["Pending leave", "08", "Review"], ["Payroll status", "Ready", "This cycle"]].map(([label, value, note]) => (
+                    {(english ? [["Attendance", "In view", "Shift inputs"], ["Leave", "To review", "Approvals"], ["Payroll", "Prepare", "This cycle"]] : [["الحضور", "متاح", "الورديات"], ["الإجازات", "للمراجعة", "الموافقات"], ["الرواتب", "للتحضير", "هذه الدورة"]]).map(([label, value, note]) => (
                       <div key={label} className="rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
                         <p className="text-[9px] leading-3 text-slate-500">{label}</p><p className="mt-2 text-base font-bold sm:text-lg">{value}</p><p className="mt-1 text-[9px] font-semibold text-cyan-600">{note}</p>
                       </div>
@@ -76,16 +76,16 @@ export default function Hero({ content }: { content: SiteContent["hero"] }) {
                   </div>
                   <div className="mt-3 grid gap-3 sm:grid-cols-[1.3fr_1fr]">
                     <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                      <div className="flex justify-between text-[10px]"><span className="font-semibold">Attendance trend</span><span className="text-slate-400">This week</span></div>
+                      <div className="flex justify-between text-[10px]"><span className="font-semibold">{english ? "Attendance by day" : "الحضور حسب اليوم"}</span><span className="text-slate-400">{english ? "This week" : "هذا الأسبوع"}</span></div>
                       <div className="mt-5 flex h-20 items-end gap-2">{bars.map((height, index) => <div key={index} className="flex-1 rounded-t-md bg-gradient-to-t from-indigo-600 to-cyan-400" style={{ height: `${height}%` }} />)}</div>
                       <div className="mt-2 flex justify-between text-[8px] text-slate-400"><span>Sat</span><span>Fri</span></div>
                     </div>
                     <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                      <p className="text-[10px] font-semibold">Today&apos;s work</p>
+                      <p className="text-[10px] font-semibold">{english ? "Before payroll cut-off" : "قبل إغلاق الرواتب"}</p>
                       <div className="mt-4 space-y-3 text-[10px] text-slate-600">
-                        <p><span className="me-2 text-cyan-500">●</span>Attendance synced</p>
-                        <p><span className="me-2 text-indigo-500">●</span>Leave requests to review</p>
-                        <p><span className="me-2 text-emerald-500">●</span>Payroll ready to check</p>
+                        <p><span className="me-2 text-cyan-500">●</span>{english ? "Check time adjustments" : "راجع تعديلات الوقت"}</p>
+                        <p><span className="me-2 text-indigo-500">●</span>{english ? "Resolve leave requests" : "أنهِ طلبات الإجازة"}</p>
+                        <p><span className="me-2 text-emerald-500">●</span>{english ? "Review payroll inputs" : "راجع مدخلات الرواتب"}</p>
                       </div>
                     </div>
                   </div>

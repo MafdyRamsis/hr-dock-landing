@@ -3,10 +3,10 @@
 import { useLang } from "../context/LanguageContext";
 
 const steps = [
-  { number: "01", title: ["Know who is in", "اعرف من حضر"], detail: ["Attendance, shifts and leave in one view", "الحضور والورديات والإجازات في شاشة واحدة"] },
-  { number: "02", title: ["Handle requests", "أنجز الطلبات"], detail: ["Keep employee requests moving", "تابع طلبات الموظفين بسهولة"] },
-  { number: "03", title: ["Prepare payroll", "جهّز الرواتب"], detail: ["Bring time and payroll work together", "اربط بيانات الوقت بالرواتب"] },
-  { number: "04", title: ["Keep records ready", "نظّم الملفات"], detail: ["Find the people information you need", "اعثر على بيانات الموظفين وقت الحاجة"] },
+  { number: "01", title: ["Payroll cut-off is a chase", "إغلاق الرواتب يتحول إلى مطاردة"], detail: ["Attendance edits, overtime and leave arrive from different people and files.", "تصل تعديلات الحضور والإضافي والإجازات من أشخاص وملفات مختلفة."], answer: ["Review the inputs together before payroll.", "راجع المدخلات معاً قبل إعداد الرواتب."] },
+  { number: "02", title: ["Approvals disappear in chats", "الموافقات تضيع بين الرسائل"], detail: ["A manager misses a leave or employee request, and HR has to follow up again.", "يفوت المدير طلب إجازة أو طلب موظف، فتبدأ الموارد البشرية المتابعة من جديد."], answer: ["Give requests a visible path and status.", "امنح الطلبات مساراً وحالة واضحة."] },
+  { number: "03", title: ["The right file is hard to find", "الملف المطلوب يصعب العثور عليه"], detail: ["Contracts, letters and employee history are scattered when they are needed most.", "تتوزع العقود والخطابات وسجل الموظف وقت الحاجة إليها."], answer: ["Keep each employee's records together.", "احتفظ بسجلات كل موظف في مكان واحد."] },
+  { number: "04", title: ["Leaders need answers now", "الإدارة تحتاج إجابات الآن"], detail: ["Headcount, absence and team activity take too long to assemble across locations.", "يستغرق جمع بيانات عدد الموظفين والغياب ونشاط الفرق وقتاً طويلاً عبر الفروع."], answer: ["See the operational picture in one view.", "شاهد صورة العمل في واجهة واحدة."] },
 ] as const;
 
 export default function Stats() {
@@ -29,14 +29,16 @@ export default function Stats() {
             </div>
           ))}
         </div>
-        <p className="mt-16 text-center text-sm font-bold uppercase tracking-[.18em] text-indigo-600">{lang === "ar" ? "العمل اليومي أولاً" : "Daily work first"}</p>
-        <h2 className="mx-auto mt-3 max-w-2xl text-center text-3xl font-bold tracking-tight md:text-4xl">{lang === "ar" ? "من أول تسجيل حضور حتى إتمام الرواتب" : "From the first check-in to the final payroll run"}</h2>
+        <p className="mt-16 text-center text-sm font-bold uppercase tracking-[.18em] text-indigo-600">{lang === "ar" ? "المشكلات التي نحلها" : "The problems we help solve"}</p>
+        <h2 className="mx-auto mt-3 max-w-3xl text-center text-3xl font-bold tracking-tight md:text-4xl">{lang === "ar" ? "أين يتعطل يوم فريق الموارد البشرية؟" : "Where does your HR day get stuck?"}</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-center text-slate-600">{lang === "ar" ? "ليست المشكلة نقص الجداول؛ بل انتقال البيانات والقرارات بينها كل يوم." : "The problem is rarely a lack of spreadsheets. It's the handoffs between people, files and decisions."}</p>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step) => (
             <article key={step.number} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:border-indigo-200 hover:shadow-xl hover:shadow-slate-200/70">
               <span className="text-sm font-bold text-indigo-600">{step.number}</span>
               <h3 className="mt-4 text-lg font-semibold">{step.title[index]}</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-500">{step.detail[index]}</p>
+              <p className="mt-5 border-t border-slate-200 pt-4 text-sm font-semibold leading-6 text-indigo-700">{step.answer[index]}</p>
             </article>
           ))}
         </div>

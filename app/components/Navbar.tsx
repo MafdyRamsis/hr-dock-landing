@@ -17,8 +17,8 @@ export default function Navbar() {
 
   return (
     <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-900/75 text-white shadow-lg shadow-slate-950/10 backdrop-blur-xl">
-      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-5 px-6">
-        <a href="#" className="shrink-0 rounded-xl bg-white px-2.5 py-1.5 shadow-sm" aria-label="HR Dock home"><Logo className="h-9 w-auto" /></a>
+      <div className="mx-auto flex h-[98px] max-w-7xl items-center justify-between gap-5 px-6 md:h-[116px]">
+        <a href="#" className="shrink-0 rounded-xl bg-white p-1 shadow-sm" aria-label="HR Dock home"><Logo className="rounded-lg" priority /></a>
         <div className="hidden items-center gap-7 lg:flex">
           {links.map(([href, label]) => <a key={href} href={href} className="text-sm font-medium text-slate-300 transition hover:text-cyan-300">{label}</a>)}
         </div>

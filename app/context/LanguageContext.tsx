@@ -16,14 +16,14 @@ const translations: Record<string, Record<Lang, string>> = {
   "nav.demo": { en: "Request Demo", ar: "طلب عرض" },
 
   // Hero
-  "hero.badge": { en: "Built around the Egyptian workday", ar: "مصمم ليوم العمل في مصر" },
-  "hero.headline": { en: "Your everyday HR, finally in one place.", ar: "إدارة الموارد البشرية اليومية، أخيراً في مكان واحد." },
+  "hero.badge": { en: "HR built for the realities of work in Egypt", ar: "موارد بشرية تناسب واقع العمل في مصر" },
+  "hero.headline": { en: "Payroll shouldn't start with a spreadsheet hunt.", ar: "إعداد الرواتب لا يجب أن يبدأ بالبحث بين الجداول." },
   "hero.sub": {
-    en: "Track attendance, manage leave and employee requests, prepare payroll, and keep your people records together — with workflows built for teams in Egypt.",
-    ar: "تابع الحضور، وأدر الإجازات وطلبات الموظفين، وجهّز الرواتب، واحتفظ بملفات فريقك في مكان واحد — بسير عمل يناسب فرق العمل في مصر.",
+    en: "When attendance, leave, overtime and employee records live in different places, month-end becomes a chase. HR Dock brings the work that feeds payroll into one clearer workflow.",
+    ar: "عندما تتفرق بيانات الحضور والإجازات والعمل الإضافي وملفات الموظفين، يصبح إغلاق الشهر مرهقاً. يجمع HR Dock الأعمال المؤثرة في الرواتب ضمن سير عمل أوضح.",
   },
-  "hero.cta1": { en: "Request a Demo", ar: "اطلب عرضاً توضيحياً" },
-  "hero.cta2": { en: "Explore daily workflows", ar: "استكشف سير العمل اليومي" },
+  "hero.cta1": { en: "Show me the workflow", ar: "شاهد سير العمل" },
+  "hero.cta2": { en: "See the problems we solve", ar: "المشكلات التي نحلها" },
 
   // Features
   "features.title": { en: "Built for the work your team does every day", ar: "مصمم للعمل الذي ينجزه فريقك كل يوم" },
@@ -65,14 +65,14 @@ const translations: Record<string, Record<Lang, string>> = {
   // Contact
   "contact.title": { en: "Request a Demo", ar: "اطلب عرضاً توضيحياً" },
   "contact.sub": {
-    en: "See HR Dock in action. Fill in your details and our team will reach out within 24 hours.",
-    ar: "شاهد HR Dock عملياً. أدخل بياناتك وسيتواصل معك فريقنا خلال 24 ساعة.",
+    en: "Tell us your team size and where work slows down—attendance corrections, approvals, payroll cut-off or employee files. We'll tailor the conversation to your workflow.",
+    ar: "أخبرنا بحجم فريقك وما يعطّل العمل: تصحيح الحضور، الموافقات، إغلاق الرواتب أو ملفات الموظفين. سنخصص العرض وفقاً لسير عملك.",
   },
   "contact.name": { en: "Full Name", ar: "الاسم الكامل" },
   "contact.company": { en: "Company Name", ar: "اسم الشركة" },
   "contact.email": { en: "Work Email", ar: "البريد الإلكتروني للعمل" },
   "contact.phone": { en: "Phone Number", ar: "رقم الهاتف" },
-  "contact.message": { en: "Message (optional)", ar: "رسالة (اختياري)" },
+  "contact.message": { en: "What's your biggest HR bottleneck? (optional)", ar: "ما أكبر عقبة تواجه فريق الموارد البشرية؟ (اختياري)" },
   "contact.submit": { en: "Request Demo", ar: "اطلب العرض" },
   "contact.success": {
     en: "Thanks! Your request was received. We'll be in touch soon.",
@@ -103,8 +103,8 @@ const translations: Record<string, Record<Lang, string>> = {
   "ai.cta": { en: "See AI in Action", ar: "شاهد الذكاء الاصطناعي" },
 
   // Products
-  "products.title": { en: "Start with the daily essentials. Grow from there.", ar: "ابدأ بأساسيات العمل اليومي، ثم توسّع." },
-  "products.sub": { en: "People and payroll first. Add the employee lifecycle and hiring tools as your team needs them. Every module builds on the last.", ar: "ابدأ بإدارة الأفراد والرواتب، ثم أضف أدوات دورة حياة الموظف والتوظيف حسب احتياج فريقك. كل وحدة تشمل ما قبلها." },
+  "products.title": { en: "One workflow for the work behind every payday.", ar: "سير عمل واحد لكل ما يسبق يوم صرف الرواتب." },
+  "products.sub": { en: "Connect time, people records and approvals first. Add employee operations and hiring when those handoffs need the same clarity.", ar: "اربط بيانات الوقت وملفات الموظفين والموافقات أولاً، ثم أضف العمليات والتوظيف عندما تحتاج هذه المراحل إلى الوضوح نفسه." },
   "products.m1.name": { en: "Payroll & Attendance", ar: "الرواتب والحضور" },
   "products.m1.tag": { en: "Module 1", ar: "الوحدة الأولى" },
   "products.m1.sub": { en: "الرواتب والحضور", ar: "الرواتب والحضور" },
@@ -120,8 +120,8 @@ const translations: Record<string, Record<Lang, string>> = {
 
   // About
   "about.title": { en: "About HR Dock", ar: "عن HR Dock" },
-  "about.sub": { en: "Built for teams working in Egypt.", ar: "مصمم لفرق العمل في مصر." },
-  "about.body": { en: "HR Dock brings the everyday work of HR together: employee records, attendance, leave, requests, and payroll. Arabic and English access, multi-company structures, and configurable payroll settings help teams adapt the platform to the way they operate in Egypt.", ar: "يجمع HR Dock أعمال الموارد البشرية اليومية: ملفات الموظفين والحضور والإجازات والطلبات والرواتب. يساعد الوصول بالعربية والإنجليزية، ودعم الشركات المتعددة، وإعدادات الرواتب القابلة للتهيئة الفرق على استخدام المنصة بما يناسب عملها في مصر." },
+  "about.sub": { en: "Practical HR operations for teams in Egypt", ar: "عمليات موارد بشرية عملية لفرق العمل في مصر" },
+  "about.body": { en: "HR Dock is designed around the handoffs that consume an HR team's day: checking time data before payroll, routing employee requests, finding the right record and answering management questions. Arabic and English access and configurable settings let you fit those workflows to your organization.", ar: "صُمم HR Dock حول المهام التي تستهلك يوم فريق الموارد البشرية: مراجعة بيانات الوقت قبل الرواتب، وتوجيه طلبات الموظفين، والعثور على الملفات، والإجابة عن أسئلة الإدارة. تتيح الواجهة العربية والإنجليزية والإعدادات القابلة للتهيئة مواءمة هذه المهام مع مؤسستك." },
   "about.v1": { en: "Mission", ar: "المهمة" },
   "about.v1.text": { en: "Make the daily work of HR clearer and easier for Egyptian employers and employees.", ar: "تبسيط العمل اليومي للموارد البشرية لأصحاب الأعمال والموظفين في مصر." },
   "about.v2": { en: "Vision", ar: "الرؤية" },
