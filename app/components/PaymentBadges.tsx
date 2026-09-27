@@ -5,10 +5,10 @@ import { useEffect, useRef, useState } from "react";
 // artwork goes in /public/payment-logos/ (from Paymob's merchant brand kit).
 // Until a file exists, a neutral text badge is shown instead of a drawn copy.
 const BRANDS = [
-  { label: "Paymob", file: "paymob.svg" },
+  { label: "Paymob", file: "paymob.png" },
   { label: "Visa", file: "visa.svg" },
   { label: "Mastercard", file: "mastercard.svg" },
-  { label: "Meeza", file: "meeza.svg" },
+  { label: "Meeza", file: "meeza.png" },
 ];
 
 function Badge({ label, file }: { label: string; file: string }) {
