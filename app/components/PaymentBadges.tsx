@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 // Until a file exists, a neutral text badge is shown instead of a drawn copy.
 const BRANDS = [
   { label: "Paymob", file: "paymob.png" },
-  { label: "Visa", file: "visa.svg" },
+  { label: "Visa", file: "visa.png" },
   { label: "Mastercard", file: "mastercard.svg" },
   { label: "Meeza", file: "meeza.png" },
 ];
