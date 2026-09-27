@@ -2,9 +2,12 @@
 import Link from "next/link";
 import { useLang } from "../context/LanguageContext";
 import Logo from "./Logo";
+import PaymentBadges from "./PaymentBadges";
+import { legalEntity } from "../lib/legal-entity";
 
 export default function Footer() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
+  const ar = lang === "ar";
   const year = new Date().getFullYear();
 
   return (
@@ -54,11 +57,29 @@ export default function Footer() {
           </div>
         </div>
 
+        <div className="mb-8 flex flex-col gap-6 border-t border-white/10 pt-6 md:flex-row md:items-start md:justify-between">
+          <div className="text-xs leading-6 text-slate-400">
+            <div className="font-semibold text-slate-300">{ar ? legalEntity.nameAr : legalEntity.name}</div>
+            <div>{ar ? "سجل تجاري" : "Commercial register"} {legalEntity.commercialReg} · {ar ? "الرقم الضريبي" : "Tax ID"} {legalEntity.taxId}</div>
+            <div>{ar ? legalEntity.addressAr : legalEntity.address}</div>
+            <div>
+              <a href={`mailto:${legalEntity.email}`} className="hover:text-cyan-300">{legalEntity.email}</a>
+              {" · "}
+              <a href={`tel:${legalEntity.phone}`} className="hover:text-cyan-300" dir="ltr">{legalEntity.phone}</a>
+            </div>
+          </div>
+          <div>
+            <div className="mb-2 text-xs text-slate-400">{ar ? "وسائل الدفع المقبولة — عبر Paymob" : "Accepted payments — processed by Paymob"}</div>
+            <PaymentBadges />
+          </div>
+        </div>
+
         <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-sm text-slate-500 sm:flex-row">
           <p>© {year} HR Dock. {t("footer.rights")}</p>
-          <div className="flex items-center gap-6">
-            <Link href="/terms" className="transition-colors hover:text-cyan-300">Terms & Conditions</Link>
-            <Link href="/privacy" className="transition-colors hover:text-cyan-300">Privacy Policy</Link>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            <Link href="/terms" className="transition-colors hover:text-cyan-300">{ar ? "الشروط والأحكام" : "Terms & Conditions"}</Link>
+            <Link href="/refund" className="transition-colors hover:text-cyan-300">{ar ? "سياسة الاسترجاع" : "Refund Policy"}</Link>
+            <Link href="/privacy" className="transition-colors hover:text-cyan-300">{ar ? "سياسة الخصوصية" : "Privacy Policy"}</Link>
             <p className="text-xs text-cyan-300/70">Built in Egypt 🇪🇬</p>
           </div>
         </div>
