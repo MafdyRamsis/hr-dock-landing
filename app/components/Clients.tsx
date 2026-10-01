@@ -14,9 +14,9 @@ export default function Clients({ content }: { content: SiteContent["clients"] }
           <h2 className="text-2xl font-bold text-slate-900">{lang === "en" ? content.title : t("clients.title")}</h2>
           <p className="mt-3 text-sm text-slate-500">{lang === "en" ? content.subtitle : t("clients.sub")}</p>
         </div>
-        <div className="mt-9 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-          {content.logos.map((logo, index) => <div key={`${logo.name}-${index}`} className="flex h-24 items-center justify-center rounded-2xl border border-slate-200 bg-white p-5">
-            {logo.imageUrl ? <div className="relative h-full w-full"><Image src={logo.imageUrl} alt={logo.name} fill sizes="180px" className="object-contain" /></div> : <span className="text-sm font-semibold text-slate-500">{logo.name}</span>}
+        <div className="mt-9 flex flex-wrap justify-center gap-5">
+          {content.logos.map((logo, index) => <div key={`${logo.name}-${index}`} title={logo.name} className="flex h-32 w-[calc(50%-10px)] items-center justify-center rounded-2xl border border-slate-200 bg-white p-3 sm:h-36 sm:w-60">
+            {logo.imageUrl ? <div className="relative h-full w-full"><Image src={logo.imageUrl} alt={logo.name} fill sizes="(min-width: 640px) 240px, 50vw" className="object-contain mix-blend-multiply" /></div> : <span className="text-sm font-semibold text-slate-500">{logo.name}</span>}
           </div>)}
         </div>
       </div>
