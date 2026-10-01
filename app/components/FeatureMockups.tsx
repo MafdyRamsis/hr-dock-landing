@@ -198,7 +198,6 @@ export function AnalyticsMockup() {
 /* ── 5. Multi-Company ── */
 export function MultiCompanyMockup() {
   const companies = [
-    { name: "Shaheen Group", employees: 248, plan: "Enterprise", active: true },
     { name: "TechCorp Egypt", employees: 95, plan: "Growth", active: true },
     { name: "Nile Ventures", employees: 32, plan: "Starter", active: false },
   ];
@@ -221,7 +220,7 @@ export function MultiCompanyMockup() {
           <div className="text-[9px] bg-[#00B4B4] text-white px-2 py-0.5 rounded-full">+ Add Company</div>
         </div>
         <div className="grid grid-cols-3 gap-2 mb-3">
-          {[["Companies","3"],["Total Users","375"],["Active Now","12"]].map(([l,v])=>(
+          {[["Companies","2"],["Total Users","127"],["Active Now","12"]].map(([l,v])=>(
             <div key={l} className="bg-white/10 rounded p-2 text-center">
               <div className="text-white font-bold">{v}</div>
               <div className="text-white/40 text-[8px]">{l}</div>
