@@ -15,13 +15,18 @@ export function Section({ title, children }: { title: string; children: React.Re
 }
 
 export function SellerBlock({ ar = false }: { ar?: boolean }) {
+  const registration = [
+    legalEntity.commercialReg && `${ar ? "سجل تجاري رقم" : "Commercial register no."} ${legalEntity.commercialReg}`,
+    legalEntity.taxId && `${ar ? "الرقم الضريبي" : "Tax ID"} ${legalEntity.taxId}`,
+  ].filter(Boolean).join(" · ");
+
   return (
     <p>
       <strong className="text-white">{ar ? legalEntity.nameAr : legalEntity.name}</strong><br />
-      {ar ? "سجل تجاري رقم" : "Commercial register no."} {legalEntity.commercialReg} · {ar ? "الرقم الضريبي" : "Tax ID"} {legalEntity.taxId}<br />
+      {registration && <>{registration}<br /></>}
       {ar ? legalEntity.addressAr : legalEntity.address}<br />
       <a href={`mailto:${legalEntity.email}`} className="text-[#00B4B4] hover:underline">{legalEntity.email}</a>
-      {" · "}<span dir="ltr">{legalEntity.phone}</span>
+      {legalEntity.phone && <>{" · "}<span dir="ltr">{legalEntity.phone}</span></>}
     </p>
   );
 }
