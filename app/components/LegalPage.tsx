@@ -50,7 +50,7 @@ export default function LegalPage({ titleEn, titleAr, effective, effectiveAr, en
       </nav>
 
       <main className="max-w-4xl mx-auto px-6 py-16">
-        <div className="mb-12">
+        <div id="top" className="mb-12">
           <h1 className="text-4xl font-bold text-white mb-3">{titleEn}</h1>
           <p className="text-white/40 text-sm">Effective date: {effective} · <a href="#ar" className="hover:text-[#00B4B4]">النسخة العربية أدناه</a></p>
         </div>
@@ -59,7 +59,7 @@ export default function LegalPage({ titleEn, titleAr, effective, effectiveAr, en
         <div id="ar" dir="rtl" lang="ar" className="mt-20 border-t border-white/10 pt-16">
           <div className="mb-12">
             <h1 className="text-4xl font-bold text-white mb-3">{titleAr}</h1>
-            <p className="text-white/40 text-sm">تاريخ السريان: {effectiveAr}</p>
+            <p className="text-white/40 text-sm">تاريخ السريان: {effectiveAr} · <a href="#top" className="hover:text-[#00B4B4]">English version above</a></p>
           </div>
           <div className="prose prose-invert prose-lg max-w-none space-y-10 text-white/70 leading-relaxed">{arabic}</div>
         </div>

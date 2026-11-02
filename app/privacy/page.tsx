@@ -102,7 +102,7 @@ const english = (
     <Section title="8. Sharing & Third Parties">
       <p>We do not sell your data. We share data only with:</p>
       <ul>
-        <li><W>Sub-processors:</W> Third-party services we use to operate the platform — cloud hosting, payment processing (Paymob), error monitoring and email delivery. All sub-processors are bound by data processing agreements and provide equivalent data protection guarantees.</li>
+        <li><W>Sub-processors:</W> Third-party services we use to operate the platform — cloud hosting, payment processing (Paymob), error monitoring, email delivery and, where your employer switches it on, WhatsApp messaging through Meta&apos;s WhatsApp Business Platform (used to send payslips and HR notifications; it receives the employee&apos;s name, WhatsApp number and the message or document being sent). All sub-processors are bound by data processing agreements and provide equivalent data protection guarantees.</li>
         <li><W>Legal authorities:</W> When required by Egyptian law, court order, the Central Bank of Egypt or card networks, or to protect HR Dock&apos;s legal rights.</li>
         <li><W>Business transfers:</W> In the event of a merger or acquisition, your data may be transferred. We will notify you in advance and you retain the right to export your data.</li>
       </ul>
@@ -234,7 +234,7 @@ const arabic = (
     <Section title="8. المشاركة مع الغير">
       <p>لا نبيع بياناتك، ونشاركها فقط مع:</p>
       <ul>
-        <li><W>المعالجين الفرعيين:</W> خدمات نستخدمها لتشغيل المنصة — الاستضافة السحابية، ومعالجة المدفوعات (Paymob)، ومراقبة الأخطاء، وإرسال البريد الإلكتروني. ويلتزم جميعهم باتفاقيات معالجة بيانات توفر ضمانات حماية مماثلة.</li>
+        <li><W>المعالجين الفرعيين:</W> خدمات نستخدمها لتشغيل المنصة — الاستضافة السحابية، ومعالجة المدفوعات (Paymob)، ومراقبة الأخطاء، وإرسال البريد الإلكتروني، وعند تفعيل صاحب العمل لها، إرسال الرسائل عبر منصة واتساب للأعمال التابعة لشركة Meta (لإرسال قسائم الرواتب وإشعارات الموارد البشرية، وتستلم اسم الموظف ورقم واتساب الخاص به والرسالة أو المستند المرسل). ويلتزم جميعهم باتفاقيات معالجة بيانات توفر ضمانات حماية مماثلة.</li>
         <li><W>الجهات القانونية:</W> عندما يتطلب ذلك القانون المصري أو أمر قضائي أو البنك المركزي المصري أو شبكات البطاقات، أو لحماية حقوق HR Dock القانونية.</li>
         <li><W>انتقال الأعمال:</W> في حالة الاندماج أو الاستحواذ قد تنتقل بياناتك، وسنخطرك مسبقًا مع احتفاظك بحق تصدير بياناتك.</li>
       </ul>
@@ -276,5 +276,5 @@ const arabic = (
 
 export default function PrivacyPage() {
   return <LegalPage titleEn="Privacy Policy" titleAr="سياسة الخصوصية"
-    effective="27 September 2026" effectiveAr="27 سبتمبر 2026" english={english} arabic={arabic} />;
+    effective="16 November 2026" effectiveAr="16 نوفمبر 2026" english={english} arabic={arabic} />;
 }
