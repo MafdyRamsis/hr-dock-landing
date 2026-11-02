@@ -69,7 +69,7 @@ const english = (
         <li>Card details are entered only on Paymob&apos;s secure page. {COMPANY_NAME} never receives or stores your full card number.</li>
         <li>A payment receipt is emailed to you after every successful online payment.</li>
         <li>Refunds, cancellation and plan changes follow our <Link href="/refund" className={a}>Refund &amp; Cancellation Policy</Link>, including a full refund of your first invoice within 14 days.</li>
-        <li>Unpaid invoices may result in suspension of access after a 7-day grace period following the due date.</li>
+        <li>If an invoice is not paid by its due date, full access continues for 7 days. From the 8th day after the due date the account becomes read-only: users can sign in, view data and record attendance, but other changes are paused. From the 31st day access is suspended, except for signing in to pay the invoice. Payment restores full access immediately. No data is deleted because of late payment.</li>
         <li>{COMPANY_NAME} may revise its fees for future billing periods with 30 days&apos; written notice.</li>
       </ul>
     </Section>
@@ -176,7 +176,7 @@ const arabic = (
         <li>تُدخل بيانات البطاقة فقط في صفحة الدفع الآمنة الخاصة بـ Paymob، ولا تستلم HR Dock رقم البطاقة كاملًا ولا تحتفظ به.</li>
         <li>يُرسل إيصال دفع إلى بريدك الإلكتروني بعد كل عملية دفع إلكتروني ناجحة.</li>
         <li>يخضع الاسترداد والإلغاء وتغيير الباقة لـ<Link href="/refund#ar" className={a}>سياسة الاسترداد والإلغاء</Link>، بما في ذلك استرداد كامل قيمة أول فاتورة خلال 14 يومًا.</li>
-        <li>قد يؤدي عدم سداد الفواتير إلى إيقاف الخدمة بعد مهلة 7 أيام من تاريخ الاستحقاق.</li>
+        <li>إذا لم تُسدد الفاتورة في موعد استحقاقها، يستمر الوصول الكامل لمدة 7 أيام. ومن اليوم الثامن بعد تاريخ الاستحقاق يصبح الحساب للقراءة فقط: يمكن للمستخدمين تسجيل الدخول وعرض البيانات وتسجيل الحضور، مع إيقاف باقي التعديلات. ومن اليوم الحادي والثلاثين يتم إيقاف الوصول، باستثناء تسجيل الدخول لسداد الفاتورة. ويعود الوصول الكامل فور السداد. ولا يتم حذف أي بيانات بسبب التأخر في السداد.</li>
         <li>يحق لـ HR Dock تعديل الرسوم لفترات الفوترة المستقبلية بإخطار كتابي قبل 30 يومًا.</li>
       </ul>
     </Section>
@@ -227,5 +227,5 @@ const arabic = (
 
 export default function TermsPage() {
   return <LegalPage titleEn="Terms & Conditions" titleAr="الشروط والأحكام"
-    effective="27 September 2026" effectiveAr="27 سبتمبر 2026" english={english} arabic={arabic} />;
+    effective="16 November 2026" effectiveAr="16 نوفمبر 2026" english={english} arabic={arabic} />;
 }
