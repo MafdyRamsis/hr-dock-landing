@@ -57,7 +57,7 @@ export default function Hero({ content }: { content: SiteContent["hero"] }) {
                 <aside className="hidden w-28 shrink-0 bg-slate-900 px-3 py-5 sm:block">
                   <span className="block text-xs font-bold text-cyan-300">HR Dock</span>
                   <div className="mt-8 space-y-3">
-                    {["Overview", "People", "Attendance", "Leave", "Payroll", "Reports"].map((item, index) => (
+                    {(english ? ["Overview", "People", "Attendance", "Leave", "Payroll", "Reports"] : ["نظرة عامة", "الموظفون", "الحضور", "الإجازات", "الرواتب", "التقارير"]).map((item, index) => (
                       <div key={item} className={`rounded-md px-2 py-1.5 text-[9px] ${index === 0 ? "bg-indigo-500/20 font-semibold text-indigo-200" : "text-slate-400"}`}>{item}</div>
                     ))}
                   </div>
@@ -65,7 +65,7 @@ export default function Hero({ content }: { content: SiteContent["hero"] }) {
                 <div className="min-w-0 flex-1 p-4 sm:p-6">
                   <div className="flex items-start justify-between gap-2">
                     <div><p className="text-[10px] font-semibold uppercase tracking-widest text-indigo-500">{english ? "Payroll preparation" : "التحضير للرواتب"}</p><h2 className="mt-1 text-lg font-bold sm:text-xl">{english ? "Know what's ready to review" : "اعرف ما يحتاج إلى المراجعة"}</h2></div>
-                    <span className="rounded-lg border border-slate-200 bg-white px-2 py-1 text-[9px] text-slate-500">EGP · Egypt</span>
+                    <span className="rounded-lg border border-slate-200 bg-white px-2 py-1 text-[9px] text-slate-500">{english ? "EGP · Egypt" : "ج.م · مصر"}</span>
                   </div>
                   <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-3">
                     {(english ? [["Attendance", "In view", "Shift inputs"], ["Leave", "To review", "Approvals"], ["Payroll", "Prepare", "This cycle"]] : [["الحضور", "متاح", "الورديات"], ["الإجازات", "للمراجعة", "الموافقات"], ["الرواتب", "للتحضير", "هذه الدورة"]]).map(([label, value, note]) => (
@@ -78,7 +78,7 @@ export default function Hero({ content }: { content: SiteContent["hero"] }) {
                     <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                       <div className="flex justify-between text-[10px]"><span className="font-semibold">{english ? "Attendance by day" : "الحضور حسب اليوم"}</span><span className="text-slate-400">{english ? "This week" : "هذا الأسبوع"}</span></div>
                       <div className="mt-5 flex h-20 items-end gap-2">{bars.map((height, index) => <div key={index} className="flex-1 rounded-t-md bg-gradient-to-t from-indigo-600 to-cyan-400" style={{ height: `${height}%` }} />)}</div>
-                      <div className="mt-2 flex justify-between text-[8px] text-slate-400"><span>Sat</span><span>Fri</span></div>
+                      <div className="mt-2 flex justify-between text-[8px] text-slate-400"><span>{english ? "Sat" : "السبت"}</span><span>{english ? "Fri" : "الجمعة"}</span></div>
                     </div>
                     <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                       <p className="text-[10px] font-semibold">{english ? "Before payroll cut-off" : "قبل إغلاق الرواتب"}</p>

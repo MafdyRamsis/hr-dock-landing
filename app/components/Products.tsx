@@ -18,10 +18,9 @@ const highlights = [
 ] as const;
 
 const groups = [
-  { name: ["People & payroll", "الأفراد والرواتب"], module: 1, items: [["Employee records", "ملفات الموظفين"], ["Attendance & shifts", "الحضور والورديات"], ["Leave & holidays", "الإجازات والعطلات"], ["Payroll & payslips", "الرواتب وكشوفها"], ["Overtime, loans & expenses", "الإضافي والسلف والمصروفات"]] },
-  { name: ["Employee lifecycle", "دورة حياة الموظف"], module: 2, items: [["Onboarding & exit", "التعيين وإنهاء الخدمة"], ["Documents & letters", "المستندات والخطابات"], ["Assets & benefits", "العهد والمزايا"], ["Policies & workflows", "السياسات وسير العمل"]] },
-  { name: ["Growth & support", "التطوير والدعم"], module: 2, items: [["Training & performance", "التدريب والأداء"], ["Helpdesk & surveys", "الدعم والاستبيانات"], ["Travel & remote-work requests", "طلبات السفر والعمل عن بُعد"], ["Disciplinary cases", "الإجراءات التأديبية"]] },
-  { name: ["Hiring & AI", "التوظيف والذكاء الاصطناعي"], module: 3, items: [["Recruitment pipeline", "مراحل التوظيف"], ["AI candidate screening", "فرز المرشحين بالذكاء الاصطناعي"], ["Assessments", "التقييمات"], ["Job descriptions & talent pool", "الوصف الوظيفي وقاعدة المواهب"]] },
+  { name: ["Payroll & Attendance", "الرواتب والحضور"], module: 1, plan: ["Starter", "الأساسية"], items: [["Employee records", "ملفات الموظفين"], ["Attendance & shifts", "الحضور والورديات"], ["Leave & holidays", "الإجازات والعطلات"], ["Payroll & payslips", "الرواتب وكشوفها"], ["Overtime, loans & expenses", "الإضافي والسلف والمصروفات"]] },
+  { name: ["HR Operations", "عمليات الموارد البشرية"], module: 2, plan: ["Growth", "النمو"], items: [["Onboarding & exit", "التعيين وإنهاء الخدمة"], ["Documents & letters", "المستندات والخطابات"], ["Assets & benefits", "العهد والمزايا"], ["Policies & workflows", "السياسات وسير العمل"], ["Training & performance", "التدريب والأداء"], ["Helpdesk & surveys", "الدعم والاستبيانات"], ["Travel & remote-work requests", "طلبات السفر والعمل عن بُعد"], ["Disciplinary cases", "الإجراءات التأديبية"]] },
+  { name: ["Recruitment & AI", "التوظيف والذكاء الاصطناعي"], module: 3, plan: ["Enterprise", "المؤسسات"], items: [["Recruitment pipeline", "مراحل التوظيف"], ["AI candidate screening", "فرز المرشحين بالذكاء الاصطناعي"], ["Assessments", "التقييمات"], ["Job descriptions & talent pool", "الوصف الوظيفي وقاعدة المواهب"]] },
 ] as const;
 
 export default function Products() {
@@ -60,16 +59,16 @@ export default function Products() {
           <div><p className="text-sm font-bold uppercase tracking-[.18em] text-indigo-600">{lang === "ar" ? "الوحدات" : "Explore the modules"}</p><h3 className="mt-3 text-3xl font-bold tracking-tight">{lang === "ar" ? "ابدأ من نقطة التعطّل، ثم اربط بقية العمل" : "Start at the bottleneck. Connect the rest."}</h3></div>
           <a href="#pricing" className="inline-flex shrink-0 items-center justify-center rounded-xl border border-indigo-200 bg-indigo-50 px-5 py-3 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-100">{lang === "ar" ? "قارن الباقات ←" : "Compare plans →"}</a>
         </div>
-        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-4 lg:grid-cols-3">
           {groups.map((group) => (
             <article key={group.name[0]} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <span className="text-xs font-bold uppercase tracking-widest text-cyan-700">{lang === "ar" ? `الوحدة ${group.module} وما بعدها` : `Module ${group.module} onward`}</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-cyan-700">{lang === "ar" ? `الوحدة ${group.module} · باقة ${group.plan[1]}` : `Module ${group.module} · ${group.plan[0]} plan`}</span>
               <h4 className="mt-3 text-lg font-bold">{group.name[index]}</h4>
-              <ul className="mt-5 space-y-3">{group.items.map((feature) => <li key={feature[0]} className="flex gap-2 text-sm leading-5 text-slate-600"><span className="text-indigo-600" aria-hidden="true">✓</span>{feature[index]}</li>)}</ul>
+              <ul className={group.items.length > 5 ? "mt-5 grid gap-3 sm:grid-cols-2" : "mt-5 space-y-3"}>{group.items.map((feature) => <li key={feature[0]} className="flex gap-2 text-sm leading-5 text-slate-600"><span className="text-indigo-600" aria-hidden="true">✓</span>{feature[index]}</li>)}</ul>
             </article>
           ))}
         </div>
-        <p className="mt-7 text-center text-sm text-slate-500">{lang === "ar" ? "كل وحدة تشمل ما قبلها." : "Each module includes the ones before it."}</p>
+        <p className="mt-7 text-center text-sm text-slate-500">{lang === "ar" ? "3 وحدات فقط: الوحدة 2 تشمل الوحدة 1، والوحدة 3 تشمل الوحدتين." : "Three modules: Module 2 includes Module 1, and Module 3 includes both."}</p>
 
         <div id="payroll-workflow" className="mt-24 scroll-mt-20">
           <p className="text-sm font-bold uppercase tracking-[.18em] text-indigo-600">{lang === "ar" ? "شاهد المنصة" : "See the platform in action"}</p>

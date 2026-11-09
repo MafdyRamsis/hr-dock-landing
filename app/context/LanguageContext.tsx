@@ -71,7 +71,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "contact.name": { en: "Full Name", ar: "الاسم الكامل" },
   "contact.company": { en: "Company Name", ar: "اسم الشركة" },
   "contact.email": { en: "Work Email", ar: "البريد الإلكتروني للعمل" },
-  "contact.phone": { en: "Phone Number", ar: "رقم الهاتف" },
+  "contact.phone": { en: "Phone / WhatsApp (optional)", ar: "رقم الهاتف / واتساب (اختياري)" },
   "contact.headcount": { en: "Team Size (optional)", ar: "عدد الموظفين (اختياري)" },
   "contact.emailDemo": { en: "Email Us to Request a Demo", ar: "اطلب عرضًا عبر البريد الإلكتروني" },
   "contact.emailHint": { en: "Include your company name, team size and the workflow you’d like to see.", ar: "اذكر اسم شركتك وعدد الموظفين وسير العمل الذي ترغب في رؤيته." },
@@ -85,7 +85,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "contact.error": { en: "We couldn't send your request. Please try again.", ar: "تعذر إرسال طلبك. يرجى المحاولة مرة أخرى." },
 
   // Navbar extras
-  "nav.about": { en: "About", ar: "من نحن" },
+  "nav.about": { en: "Getting started", ar: "كيف نبدأ" },
   "nav.products": { en: "Products", ar: "المنتجات" },
   "nav.clients": { en: "Clients", ar: "عملاؤنا" },
 

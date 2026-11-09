@@ -36,7 +36,7 @@ export default function Pricing({ content }: { content: SiteContent["pricing"] }
             const description = ar ? (AR_DESCRIPTIONS[index] ?? plan.description) : plan.description;
             const features = ar && AR_FEATURES[index] ? AR_FEATURES[index] : plan.features;
             return <article key={plan.name} className={`relative flex flex-col rounded-[1.5rem] border p-8 transition duration-300 hover:-translate-y-1 hover:shadow-2xl ${plan.featured ? "border-indigo-400 bg-slate-900 text-white shadow-xl shadow-indigo-900/15" : "border-slate-200 bg-white text-slate-900 shadow-sm hover:border-indigo-200"}`}>
-              {plan.featured && <span className="absolute right-6 top-0 -translate-y-1/2 rounded-full bg-cyan-400 px-3 py-1 text-xs font-bold text-slate-900">{ar ? "الأكثر طلباً" : "Most popular"}</span>}
+              {plan.featured && <span className="absolute right-6 top-0 -translate-y-1/2 rounded-full bg-cyan-400 px-3 py-1 text-xs font-bold text-slate-900">{ar ? "الموصى بها" : "Recommended"}</span>}
               <p className={`text-xs font-bold uppercase tracking-[.16em] ${plan.featured ? "text-cyan-300" : "text-indigo-600"}`}>{ar ? `الوحدة ${index + 1}` : `Module ${index + 1}`}</p>
               <h3 className="mt-4 text-2xl font-bold">{displayName}</h3>
               <p className={`mt-2 min-h-12 text-sm leading-6 ${plan.featured ? "text-slate-300" : "text-slate-500"}`}>{description}</p>

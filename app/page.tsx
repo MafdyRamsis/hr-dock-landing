@@ -7,6 +7,7 @@ import Clients from "./components/Clients";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Pricing from "./components/Pricing";
+import EgyptReady from "./components/EgyptReady";
 import { getDemoEndpoint } from "./lib/demo-delivery";
 import { getSiteContent } from "./lib/site-content";
 
@@ -20,6 +21,7 @@ export default async function Home() {
       <Hero content={content.hero} />
       <Stats />
       <Products />
+      <EgyptReady />
       <About />
       <Clients content={content.clients} />
       <Pricing content={content.pricing} />
