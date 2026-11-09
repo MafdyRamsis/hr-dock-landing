@@ -24,7 +24,7 @@ export default function Footer() {
 
           {/* Product links */}
           <div>
-            <div className="mb-4 text-xs font-semibold uppercase tracking-wider text-slate-300">Product</div>
+            <div className="mb-4 text-xs font-semibold uppercase tracking-wider text-slate-300">{ar ? "المنتج" : "Product"}</div>
             <ul className="space-y-2">
               {[
                 ["#products", t("products.m1.name")],
@@ -41,11 +41,11 @@ export default function Footer() {
 
           {/* Company links */}
           <div>
-            <div className="mb-4 text-xs font-semibold uppercase tracking-wider text-slate-300">Company</div>
+            <div className="mb-4 text-xs font-semibold uppercase tracking-wider text-slate-300">{ar ? "الشركة" : "Company"}</div>
             <ul className="space-y-2">
               {[
                 ["#about",   t("nav.about")],
-                ["#pricing", "Pricing"],
+                ["#pricing", ar ? "الباقات" : "Pricing"],
                 ["#contact", t("nav.contact")],
                 ["#contact", t("nav.demo")],
               ].map(([href, label]) => (

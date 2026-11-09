@@ -5,6 +5,18 @@ import type { SiteContent } from "../lib/site-content";
 
 // HR Dock does not publish prices. Each client receives a quotation for its
 // team; the approved deal is then invoiced and paid in the app's billing page.
+// Arabic copy for the three plans (the site admin edits the English).
+const AR_DESCRIPTIONS = [
+  "اجمع الحضور والإجازات ومدخلات الرواتب بدل الشيتات المتفرقة.",
+  "نظّم الطلبات والسجلات الخاصة بكل موظف في مكان واحد.",
+  "اربط التوظيف بعمليات الموارد البشرية اللي بعده.",
+];
+const AR_FEATURES = [
+  ["ملفات الموظفين", "الحضور والورديات والإجازات", "الرواتب وقسائم المرتبات", "الإضافي والسلف والمصروفات"],
+  ["كل ما في الأساسية", "التعيين والمستندات والعُهد", "التدريب وتقييم الأداء", "الدعم الداخلي والاستبيانات وسير العمل"],
+  ["كل ما في النمو", "مسار التوظيف", "فرز المرشحين بالذكاء الاصطناعي", "الاختبارات وقاعدة المواهب"],
+];
+
 // Any price values saved in the site admin are intentionally not displayed.
 export default function Pricing({ content }: { content: SiteContent["pricing"] }) {
   const { lang } = useLang();
@@ -21,11 +33,13 @@ export default function Pricing({ content }: { content: SiteContent["pricing"] }
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {content.plans.map((plan, index) => {
             const displayName = ar ? (["الأساسية", "النمو", "المؤسسات"][index] ?? plan.name) : plan.name;
+            const description = ar ? (AR_DESCRIPTIONS[index] ?? plan.description) : plan.description;
+            const features = ar && AR_FEATURES[index] ? AR_FEATURES[index] : plan.features;
             return <article key={plan.name} className={`relative flex flex-col rounded-[1.5rem] border p-8 transition duration-300 hover:-translate-y-1 hover:shadow-2xl ${plan.featured ? "border-indigo-400 bg-slate-900 text-white shadow-xl shadow-indigo-900/15" : "border-slate-200 bg-white text-slate-900 shadow-sm hover:border-indigo-200"}`}>
               {plan.featured && <span className="absolute right-6 top-0 -translate-y-1/2 rounded-full bg-cyan-400 px-3 py-1 text-xs font-bold text-slate-900">{ar ? "الأكثر طلباً" : "Most popular"}</span>}
               <p className={`text-xs font-bold uppercase tracking-[.16em] ${plan.featured ? "text-cyan-300" : "text-indigo-600"}`}>{ar ? `الوحدة ${index + 1}` : `Module ${index + 1}`}</p>
               <h3 className="mt-4 text-2xl font-bold">{displayName}</h3>
-              <p className={`mt-2 min-h-12 text-sm leading-6 ${plan.featured ? "text-slate-300" : "text-slate-500"}`}>{plan.description}</p>
+              <p className={`mt-2 min-h-12 text-sm leading-6 ${plan.featured ? "text-slate-300" : "text-slate-500"}`}>{description}</p>
               <div className="mt-8">
                 <p className="text-2xl font-bold tracking-tight">{ar ? "عرض سعر مخصص" : "Custom quote"}</p>
                 <p className={`mt-2 text-xs ${plan.featured ? "text-slate-400" : "text-slate-500"}`}>{ar ? "حسب حجم فريقك واحتياجات التنفيذ" : "Based on your team size and setup needs"}</p>
@@ -33,7 +47,7 @@ export default function Pricing({ content }: { content: SiteContent["pricing"] }
               <a href="#contact" className={`mt-8 rounded-xl px-5 py-3 text-center text-sm font-semibold transition ${plan.featured ? "bg-indigo-500 text-white hover:bg-indigo-400" : "border border-indigo-200 bg-indigo-50 text-indigo-700 hover:bg-indigo-100"}`}>{ar ? "اطلب عرض سعر" : plan.cta}</a>
               <div className={`my-7 border-t ${plan.featured ? "border-white/15" : "border-slate-200"}`} />
               <p className={`mb-5 text-xs font-bold uppercase tracking-widest ${plan.featured ? "text-slate-300" : "text-slate-500"}`}>{ar ? "ما تشمله الباقة" : "What's included"}</p>
-              <ul className="space-y-4">{plan.features.map((feature) => <li key={feature} className="flex gap-3 text-sm leading-5"><span className={`font-bold ${plan.featured ? "text-cyan-300" : "text-indigo-600"}`} aria-hidden="true">✓</span>{feature}</li>)}</ul>
+              <ul className="space-y-4">{features.map((feature) => <li key={feature} className="flex gap-3 text-sm leading-5"><span className={`font-bold ${plan.featured ? "text-cyan-300" : "text-indigo-600"}`} aria-hidden="true">✓</span>{feature}</li>)}</ul>
             </article>;
           })}
         </div>
