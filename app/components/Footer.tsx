@@ -60,12 +60,12 @@ export default function Footer() {
         <div className="mb-8 flex flex-col gap-6 border-t border-white/10 pt-6 md:flex-row md:items-start md:justify-between">
           <div className="text-xs leading-6 text-slate-400">
             <div className="font-semibold text-slate-300">{ar ? legalEntity.nameAr : legalEntity.name}</div>
-            <div>{ar ? "سجل تجاري" : "Commercial register"} {legalEntity.commercialReg} · {ar ? "الرقم الضريبي" : "Tax ID"} {legalEntity.taxId}</div>
+            {legalEntity.commercialReg && <div>{ar ? "السجل التجاري" : "Commercial register"} {legalEntity.commercialReg}</div>}
+            {legalEntity.taxId && <div>{ar ? "الرقم الضريبي" : "Tax ID"} {legalEntity.taxId}</div>}
             <div>{ar ? legalEntity.addressAr : legalEntity.address}</div>
             <div>
               <a href={`mailto:${legalEntity.email}`} className="hover:text-cyan-300">{legalEntity.email}</a>
-              {" · "}
-              <a href={`tel:${legalEntity.phone}`} className="hover:text-cyan-300" dir="ltr">{legalEntity.phone}</a>
+              {legalEntity.phone && <>{" · "}<a href={`tel:${legalEntity.phone}`} className="hover:text-cyan-300" dir="ltr">{legalEntity.phone}</a></>}
             </div>
           </div>
           <div>

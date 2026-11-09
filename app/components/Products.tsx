@@ -71,13 +71,13 @@ export default function Products() {
         </div>
         <p className="mt-7 text-center text-sm text-slate-500">{lang === "ar" ? "كل وحدة تشمل ما قبلها." : "Each module includes the ones before it."}</p>
 
-        <div className="mt-24">
+        <div id="payroll-workflow" className="mt-24 scroll-mt-20">
           <p className="text-sm font-bold uppercase tracking-[.18em] text-indigo-600">{lang === "ar" ? "شاهد المنصة" : "See the platform in action"}</p>
           <h3 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">{lang === "ar" ? "صورة أوضح لكل وحدة" : "A clearer picture of every module"}</h3>
           <p className="mt-3 text-sm text-slate-500">{lang === "ar" ? "المعاينات التالية توضيحية وليست بيانات عملاء حقيقية." : "The interface previews below are illustrative, not real customer data."}</p>
           <div className="mt-10 space-y-12">
             {([
-              { kind: "payroll", number: "01", name: ["Payroll & attendance", "الرواتب والحضور"], text: ["See the inputs behind the pay run—attendance, leave, shifts and adjustments—before they turn into last-minute questions.", "راجع مدخلات الرواتب—الحضور والإجازات والورديات والتعديلات—قبل أن تتحول إلى أسئلة في اللحظة الأخيرة."], points: [["Attendance & shifts", "الحضور والورديات"], ["Leave to payroll", "الإجازات والرواتب"], ["Configurable Egypt settings", "إعدادات قابلة للتهيئة لمصر"]] },
+              { kind: "payroll", number: "01", name: ["Payroll & attendance", "الرواتب والحضور"], text: ["See the inputs behind the pay run—attendance, leave, shifts and adjustments—before they turn into last-minute questions.", "راجع مدخلات الرواتب—الحضور والإجازات والورديات والتعديلات—قبل أن تتحول إلى أسئلة في اللحظة الأخيرة."], points: [["Review attendance and leave", "راجع الحضور والإجازات"], ["Check overtime and deductions", "راجع العمل الإضافي والاستقطاعات"], ["Review and approve the pay run", "راجع مسير الرواتب واعتمده"]] },
               { kind: "operations", number: "02", name: ["HR operations", "عمليات الموارد البشرية"], text: ["Keep employee requests, documents and lifecycle steps out of disconnected inboxes and folders.", "اجمع طلبات الموظفين ومستنداتهم وخطوات رحلتهم بعيداً عن البريد والمجلدات المتفرقة."], points: [["Onboarding & exit", "التعيين وإنهاء الخدمة"], ["Documents & letters", "المستندات والخطابات"], ["Requests & workflows", "الطلبات وسير العمل"]] },
               { kind: "hiring", number: "03", name: ["Recruitment & AI", "التوظيف والذكاء الاصطناعي"], text: ["Bring applications, screening and assessments into one track so hiring decisions do not get lost across CVs and messages.", "اجمع طلبات التوظيف والفرز والتقييمات في مسار واحد حتى لا تضيع قرارات التعيين بين السير الذاتية والرسائل."], points: [["Recruitment pipeline", "مراحل التوظيف"], ["Candidate screening", "فرز المرشحين"], ["Assessments", "التقييمات"]] },
             ] as const).map((module, rowIndex) => (

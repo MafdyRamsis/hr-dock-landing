@@ -48,9 +48,9 @@ export const defaultSiteContent: SiteContent = {
   hero: {
     badge: "HR built for the realities of work in Egypt",
     headline: "Payroll shouldn't start with a spreadsheet hunt.",
-    subtext: "When attendance, leave, overtime and employee records live in different places, month-end becomes a chase. HR Dock brings the work that feeds payroll into one clearer workflow.",
-    primaryCta: "Show me the workflow",
-    secondaryCta: "See the problems we solve",
+    subtext: "Run attendance, leave, overtime and payroll in one bilingual platform built for teams in Egypt.",
+    primaryCta: "Request a Demo",
+    secondaryCta: "See the Payroll Workflow",
     imageUrl: "",
   },
   pricing: {
@@ -66,7 +66,7 @@ export const defaultSiteContent: SiteContent = {
     ],
   },
   clients: { title: "Built to grow with Egyptian businesses", subtitle: "Trusted by people-first teams building the future of work.", logos: [] },
-  cta: { title: "Bring us your busiest HR day.", subtitle: "Shift changes, leave approvals, payroll cut-off or missing employee files—show us where work slows down, and we'll walk through the matching HR Dock workflow.", button: "Plan my demo" },
+  cta: { title: "Request a Demo", subtitle: "Tell us your team size and what you want to improve. We’ll tailor the demo to how your team works.", button: "Request Demo" },
   updatedAt: new Date(0).toISOString(),
 };
 
@@ -83,8 +83,9 @@ function mergeContent(value: Partial<SiteContent>): SiteContent {
   if (hero.headline === "Your everyday HR, finally in one place.") hero.headline = defaultSiteContent.hero.headline;
   if (hero.subtext === "HR Dock streamlines payroll, attendance, recruitment, and compliance — all in one platform built for the Egyptian market.") hero.subtext = defaultSiteContent.hero.subtext;
   if (hero.subtext === "Track attendance, manage leave and employee requests, prepare payroll, and keep your people records together — with workflows built for teams in Egypt.") hero.subtext = defaultSiteContent.hero.subtext;
-  if (hero.primaryCta === "Request a Demo") hero.primaryCta = defaultSiteContent.hero.primaryCta;
-  if (hero.secondaryCta === "See How It Works") hero.secondaryCta = defaultSiteContent.hero.secondaryCta;
+  if (hero.subtext === "When attendance, leave, overtime and employee records live in different places, month-end becomes a chase. HR Dock brings the work that feeds payroll into one clearer workflow.") hero.subtext = defaultSiteContent.hero.subtext;
+  if (hero.primaryCta === "Show me the workflow") hero.primaryCta = defaultSiteContent.hero.primaryCta;
+  if (hero.secondaryCta === "See the problems we solve" || hero.secondaryCta === "See How It Works") hero.secondaryCta = defaultSiteContent.hero.secondaryCta;
   if (hero.secondaryCta === "Explore daily workflows") hero.secondaryCta = defaultSiteContent.hero.secondaryCta;
   const pricing = { ...value.pricing };
   if (pricing.eyebrow === "Simple pricing") pricing.eyebrow = defaultSiteContent.pricing.eyebrow;
@@ -121,10 +122,11 @@ function mergeContent(value: Partial<SiteContent>): SiteContent {
   }
   const cta = { ...value.cta };
   if (cta.title === "Make work feel better—for everyone.") cta.title = defaultSiteContent.cta.title;
-  if (cta.title === "See your daily HR workflow in one place.") cta.title = defaultSiteContent.cta.title;
+  if (cta.title === "Bring us your busiest HR day." || cta.title === "See your daily HR workflow in one place.") cta.title = defaultSiteContent.cta.title;
   if (cta.subtitle === "Replace fragmented HR processes with one beautifully simple platform.") cta.subtitle = defaultSiteContent.cta.subtitle;
+  if (cta.subtitle?.startsWith("Shift changes, leave approvals, payroll cut-off or missing employee files")) cta.subtitle = defaultSiteContent.cta.subtitle;
   if (cta.subtitle === "Walk through attendance, requests, payroll, and employee records using the way your team works.") cta.subtitle = defaultSiteContent.cta.subtitle;
-  if (cta.button === "Book your demo") cta.button = defaultSiteContent.cta.button;
+  if (cta.button === "Book your demo" || cta.button === "Plan my demo") cta.button = defaultSiteContent.cta.button;
   // Content published before the EGP switch held USD figures. Never relabel those figures as pounds.
   const legacyPlans = pricing && !pricing.currency
     ? pricing.plans?.map((plan) => ({ ...plan, monthlyPrice: "Contact sales", annualPrice: "Contact sales", cta: "Contact sales" }))

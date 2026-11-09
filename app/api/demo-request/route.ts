@@ -1,3 +1,5 @@
+import { getDemoDeliveryConfig } from "../../lib/demo-delivery";
+
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function clean(value: unknown, max: number) {
@@ -5,11 +7,8 @@ function clean(value: unknown, max: number) {
 }
 
 export async function POST(request: Request) {
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.DEMO_TO_EMAIL;
-  const from = process.env.DEMO_FROM_EMAIL;
-
-  if (!apiKey || !to || !from) {
+  const delivery = getDemoDeliveryConfig();
+  if (!delivery) {
     console.error("Demo request email is not configured");
     return Response.json({ error: "Demo requests are temporarily unavailable." }, { status: 503 });
   }
@@ -27,6 +26,10 @@ export async function POST(request: Request) {
   const company = clean(body.company, 160);
   const email = clean(body.email, 254).toLowerCase();
   const phone = clean(body.phone, 40);
+  const headcount = clean(body.headcount, 32);
+  if (headcount && !/^[1-9]\d{0,6}$/.test(headcount)) {
+    return Response.json({ error: "Please enter a valid team size." }, { status: 400 });
+  }
   const message = clean(body.message, 2000);
 
   if (!name || !company || !EMAIL_PATTERN.test(email)) {
@@ -36,18 +39,19 @@ export async function POST(request: Request) {
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${apiKey}`,
+      Authorization: `Bearer ${delivery.apiKey}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from,
-      to: [to],
+      from: delivery.from,
+      to: [delivery.to],
       reply_to: email,
       subject: `HR Dock demo request — ${company}`,
       text: [
         `Name: ${name}`,
         `Company: ${company}`,
         `Email: ${email}`,
+        `Team size: ${headcount || "Not provided"}`,
         `Phone: ${phone || "Not provided"}`,
         "",
         message || "No message provided.",

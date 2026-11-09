@@ -19,11 +19,11 @@ const translations: Record<string, Record<Lang, string>> = {
   "hero.badge": { en: "HR built for the realities of work in Egypt", ar: "موارد بشرية تناسب واقع العمل في مصر" },
   "hero.headline": { en: "Payroll shouldn't start with a spreadsheet hunt.", ar: "إعداد الرواتب لا يجب أن يبدأ بالبحث بين الجداول." },
   "hero.sub": {
-    en: "When attendance, leave, overtime and employee records live in different places, month-end becomes a chase. HR Dock brings the work that feeds payroll into one clearer workflow.",
-    ar: "عندما تتفرق بيانات الحضور والإجازات والعمل الإضافي وملفات الموظفين، يصبح إغلاق الشهر مرهقاً. يجمع HR Dock الأعمال المؤثرة في الرواتب ضمن سير عمل أوضح.",
+    en: "Run attendance, leave, overtime and payroll in one bilingual platform built for teams in Egypt.",
+    ar: "أدر الحضور والإجازات والعمل الإضافي والرواتب من منصة واحدة بالعربية والإنجليزية، مصممة لفرق العمل في مصر.",
   },
-  "hero.cta1": { en: "Show me the workflow", ar: "شاهد سير العمل" },
-  "hero.cta2": { en: "See the problems we solve", ar: "المشكلات التي نحلها" },
+  "hero.cta1": { en: "Request a Demo", ar: "اطلب عرضًا توضيحيًا" },
+  "hero.cta2": { en: "See the Payroll Workflow", ar: "تعرّف على خطوات إعداد الرواتب" },
 
   // Features
   "features.title": { en: "Built for the work your team does every day", ar: "مصمم للعمل الذي ينجزه فريقك كل يوم" },
@@ -65,13 +65,16 @@ const translations: Record<string, Record<Lang, string>> = {
   // Contact
   "contact.title": { en: "Request a Demo", ar: "اطلب عرضاً توضيحياً" },
   "contact.sub": {
-    en: "Tell us your team size and where work slows down—attendance corrections, approvals, payroll cut-off or employee files. We'll tailor the conversation to your workflow.",
-    ar: "أخبرنا بحجم فريقك وما يعطّل العمل: تصحيح الحضور، الموافقات، إغلاق الرواتب أو ملفات الموظفين. سنخصص العرض وفقاً لسير عملك.",
+    en: "Tell us your team size and what you want to improve. We’ll tailor the demo to how your team works.",
+    ar: "أخبرنا بحجم فريقك وما تريد تحسينه، لنقدم لك عرضًا يناسب طريقة عمل فريقك.",
   },
   "contact.name": { en: "Full Name", ar: "الاسم الكامل" },
   "contact.company": { en: "Company Name", ar: "اسم الشركة" },
   "contact.email": { en: "Work Email", ar: "البريد الإلكتروني للعمل" },
   "contact.phone": { en: "Phone Number", ar: "رقم الهاتف" },
+  "contact.headcount": { en: "Team Size (optional)", ar: "عدد الموظفين (اختياري)" },
+  "contact.emailDemo": { en: "Email Us to Request a Demo", ar: "اطلب عرضًا عبر البريد الإلكتروني" },
+  "contact.emailHint": { en: "Include your company name, team size and the workflow you’d like to see.", ar: "اذكر اسم شركتك وعدد الموظفين وسير العمل الذي ترغب في رؤيته." },
   "contact.message": { en: "What's your biggest HR bottleneck? (optional)", ar: "ما أكبر عقبة تواجه فريق الموارد البشرية؟ (اختياري)" },
   "contact.submit": { en: "Request Demo", ar: "اطلب العرض" },
   "contact.success": {

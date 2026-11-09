@@ -7,7 +7,7 @@ import Clients from "./components/Clients";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Pricing from "./components/Pricing";
-import ManagedCta from "./components/ManagedCta";
+import { getDemoDeliveryConfig } from "./lib/demo-delivery";
 import { getSiteContent } from "./lib/site-content";
 
 export const dynamic = "force-dynamic";
@@ -23,8 +23,7 @@ export default async function Home() {
       <About />
       <Clients content={content.clients} />
       <Pricing content={content.pricing} />
-      <ManagedCta content={content.cta} />
-      <Contact />
+      <Contact content={content.cta} formAvailable={Boolean(getDemoDeliveryConfig())} />
       <Footer />
     </main>
   );

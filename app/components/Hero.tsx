@@ -11,36 +11,36 @@ export default function Hero({ content }: { content: SiteContent["hero"] }) {
   const english = lang === "en";
 
   return (
-    <section className="relative isolate overflow-hidden bg-slate-900 pb-24 pt-40 text-white md:pb-32 md:pt-52">
+    <section className="relative isolate overflow-hidden bg-slate-900 pb-14 pt-28 text-white sm:pb-16 lg:pt-32">
       <div className="pointer-events-none absolute -top-56 left-1/2 -z-10 h-[650px] w-[900px] -translate-x-1/2 rounded-full bg-indigo-600/20 blur-3xl" />
       <div className="pointer-events-none absolute -right-40 bottom-0 -z-10 h-[400px] w-[500px] rounded-full bg-cyan-400/10 blur-3xl" />
-      <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[.92fr_1.08fr] lg:gap-12">
+      <div className="mx-auto grid max-w-7xl items-center min-w-0 gap-9 px-5 sm:px-6 lg:grid-cols-[.92fr_1.08fr] lg:gap-12">
         <div className="max-w-2xl">
           <span className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-semibold tracking-wide text-cyan-200">
             <span className="h-2 w-2 rounded-full bg-cyan-300" />{english ? content.badge : t("hero.badge")}
           </span>
-          <h1 className="mt-7 whitespace-pre-line text-5xl font-bold leading-[1.08] tracking-tight md:text-6xl">
+          <h1 className="mt-5 whitespace-pre-line text-4xl sm:text-5xl font-bold leading-[1.08] tracking-tight md:text-6xl">
             {english ? content.headline : t("hero.headline")}
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
+          <p className="mt-4 max-w-xl text-base leading-7 sm:text-lg text-slate-300">
             {english ? content.subtext : t("hero.sub")}
           </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <a href="#contact" className="inline-flex min-h-12 items-center justify-center rounded-xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-900/30 transition hover:-translate-y-0.5 hover:bg-indigo-500">
               {english ? content.primaryCta : t("hero.cta1")} <span className="ms-2" aria-hidden="true">↗</span>
             </a>
-            <a href="#daily-work" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10">
+            <a href="#payroll-workflow" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10">
               {english ? content.secondaryCta : t("hero.cta2")}
             </a>
           </div>
-          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-xs font-medium text-slate-400">
+          <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-xs font-medium text-slate-400">
             <span>✓ {english ? "Built for teams in Egypt" : "مصمم لفرق العمل في مصر"}</span>
             <span>✓ {english ? "Arabic & English" : "العربية والإنجليزية"}</span>
             <span>✓ {english ? "Web & mobile workflows" : "الويب والجوال"}</span>
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[680px]">
+        <div className="relative mx-auto w-full min-w-0 max-w-[680px]">
           <div className="absolute -inset-4 rounded-[2rem] border border-white/5 bg-white/[.03] blur-sm" />
           <div className="relative overflow-hidden rounded-[1.6rem] border border-slate-200/15 bg-slate-100 shadow-2xl shadow-black/40">
             <div className="flex h-10 items-center gap-2 border-b border-slate-200 bg-white px-4">
@@ -69,7 +69,7 @@ export default function Hero({ content }: { content: SiteContent["hero"] }) {
                   </div>
                   <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-3">
                     {(english ? [["Attendance", "In view", "Shift inputs"], ["Leave", "To review", "Approvals"], ["Payroll", "Prepare", "This cycle"]] : [["الحضور", "متاح", "الورديات"], ["الإجازات", "للمراجعة", "الموافقات"], ["الرواتب", "للتحضير", "هذه الدورة"]]).map(([label, value, note]) => (
-                      <div key={label} className="rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
+                      <div key={label} className="rounded-xl border border-slate-200 bg-white p-2 shadow-sm sm:p-3">
                         <p className="text-[9px] leading-3 text-slate-500">{label}</p><p className="mt-2 text-base font-bold sm:text-lg">{value}</p><p className="mt-1 text-[9px] font-semibold text-cyan-600">{note}</p>
                       </div>
                     ))}
