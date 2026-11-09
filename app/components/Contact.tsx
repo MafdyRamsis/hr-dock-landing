@@ -5,7 +5,8 @@ import { useLang } from "../context/LanguageContext";
 import { legalEntity } from "../lib/legal-entity";
 import type { SiteContent } from "../lib/site-content";
 
-export default function Contact({ content, formAvailable }: { content: SiteContent["cta"]; formAvailable: boolean }) {
+export default function Contact({ content, endpoint }: { content: SiteContent["cta"]; endpoint: string }) {
+  const formAvailable = Boolean(endpoint);
   const { t, lang } = useLang();
   const ar = lang === "ar";
   const emailLink = `mailto:${legalEntity.email}?subject=${encodeURIComponent(ar ? "طلب عرض توضيحي لنظام HR Dock" : "HR Dock demo request")}`;
@@ -22,14 +23,14 @@ export default function Contact({ content, formAvailable }: { content: SiteConte
     const payload = Object.fromEntries(new FormData(form));
 
     try {
-      const response = await fetch("/api/demo-request", {
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ ...payload, language: lang }),
       });
 
       const result = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error((!ar && result.error) || t("contact.error"));
+      if (!response.ok) throw new Error((!ar && (result.error || result.message)) || t("contact.error"));
       form.reset();
       setSubmitted(true);
     } catch (err) {
