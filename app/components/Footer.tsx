@@ -46,7 +46,6 @@ export default function Footer() {
               {[
                 ["#about",   t("nav.about")],
                 ["#pricing", ar ? "الباقات" : "Pricing"],
-                ["#contact", t("nav.contact")],
                 ["#contact", t("nav.demo")],
               ].map(([href, label]) => (
                 <li key={label}>

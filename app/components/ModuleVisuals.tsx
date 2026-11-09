@@ -26,7 +26,7 @@ function PayrollVisual({ ar }: { ar: boolean }) {
       <div className="rounded-xl border border-slate-100 p-3">
         <p className="text-[10px] font-bold text-slate-700">{label(ar, "Weekly attendance", "الحضور الأسبوعي")}</p>
         <div className="mt-4 flex h-20 items-end gap-2">{bars.map((height, index) => <div key={index} className="flex-1 rounded-t bg-gradient-to-t from-indigo-600 to-cyan-400" style={{ height: `${height}%` }} />)}</div>
-        <div className="mt-1 flex justify-between text-[8px] text-slate-400"><span>Sat</span><span>Fri</span></div>
+        <div className="mt-1 flex justify-between text-[8px] text-slate-400"><span>{label(ar, "Sat", "السبت")}</span><span>{label(ar, "Fri", "الجمعة")}</span></div>
       </div>
       <div className="flex items-center gap-3 rounded-xl border border-slate-100 p-3">
         <div className="grid h-20 w-20 shrink-0 place-items-center rounded-full bg-[conic-gradient(#4f46e5_0_78%,#67e8f9_78%_92%,#e2e8f0_92%)]"><div className="grid h-14 w-14 place-items-center rounded-full bg-white text-xs font-bold text-slate-800">92%</div></div>
