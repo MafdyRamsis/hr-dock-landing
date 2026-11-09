@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useLang } from "../context/LanguageContext";
 import type { SiteContent } from "../lib/site-content";
 
-const bars = [42, 66, 53, 82, 71, 94, 76];
 
 export default function Hero({ content }: { content: SiteContent["hero"] }) {
   const { t, lang } = useLang();
@@ -46,54 +45,19 @@ export default function Hero({ content }: { content: SiteContent["hero"] }) {
             <div className="flex h-10 items-center gap-2 border-b border-slate-200 bg-white px-4">
               <span className="h-2.5 w-2.5 rounded-full bg-rose-300" /><span className="h-2.5 w-2.5 rounded-full bg-amber-300" /><span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
               <span className="ms-3 rounded-md bg-slate-100 px-3 py-1 text-[10px] text-slate-400">app.hr-dock.com</span>
-              <span className="ms-auto rounded-full bg-indigo-50 px-2 py-1 text-[9px] font-bold text-indigo-600">{english ? "Preview" : "معاينة"}</span>
+              <span className="ms-auto rounded-full bg-indigo-50 px-2 py-1 text-[9px] font-bold text-indigo-600">{english ? "Live product" : "من النظام"}</span>
             </div>
             {content.imageUrl ? (
               <div className="relative aspect-[4/3] sm:aspect-[16/10]">
                 <Image src={content.imageUrl} alt="HR Dock product preview" fill priority sizes="(max-width: 1024px) 100vw, 680px" className="object-cover" />
               </div>
             ) : (
-              <div className="flex min-h-[390px] text-slate-900">
-                <aside className="hidden w-28 shrink-0 bg-slate-900 px-3 py-5 sm:block">
-                  <span className="block text-xs font-bold text-cyan-300">HR Dock</span>
-                  <div className="mt-8 space-y-3">
-                    {(english ? ["Overview", "People", "Attendance", "Leave", "Payroll", "Reports"] : ["نظرة عامة", "الموظفون", "الحضور", "الإجازات", "الرواتب", "التقارير"]).map((item, index) => (
-                      <div key={item} className={`rounded-md px-2 py-1.5 text-[9px] ${index === 0 ? "bg-indigo-500/20 font-semibold text-indigo-200" : "text-slate-400"}`}>{item}</div>
-                    ))}
-                  </div>
-                </aside>
-                <div className="min-w-0 flex-1 p-4 sm:p-6">
-                  <div className="flex items-start justify-between gap-2">
-                    <div><p className="text-[10px] font-semibold uppercase tracking-widest text-indigo-500">{english ? "Payroll preparation" : "التحضير للرواتب"}</p><h2 className="mt-1 text-lg font-bold sm:text-xl">{english ? "Know what's ready to review" : "اعرف ما يحتاج إلى المراجعة"}</h2></div>
-                    <span className="rounded-lg border border-slate-200 bg-white px-2 py-1 text-[9px] text-slate-500">{english ? "EGP · Egypt" : "ج.م · مصر"}</span>
-                  </div>
-                  <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-3">
-                    {(english ? [["Attendance", "In view", "Shift inputs"], ["Leave", "To review", "Approvals"], ["Payroll", "Prepare", "This cycle"]] : [["الحضور", "متاح", "الورديات"], ["الإجازات", "للمراجعة", "الموافقات"], ["الرواتب", "للتحضير", "هذه الدورة"]]).map(([label, value, note]) => (
-                      <div key={label} className="rounded-xl border border-slate-200 bg-white p-2 shadow-sm sm:p-3">
-                        <p className="text-[9px] leading-3 text-slate-500">{label}</p><p className="mt-2 text-base font-bold sm:text-lg">{value}</p><p className="mt-1 text-[9px] font-semibold text-cyan-600">{note}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-3 grid gap-3 sm:grid-cols-[1.3fr_1fr]">
-                    <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                      <div className="flex justify-between text-[10px]"><span className="font-semibold">{english ? "Attendance by day" : "الحضور حسب اليوم"}</span><span className="text-slate-400">{english ? "This week" : "هذا الأسبوع"}</span></div>
-                      <div className="mt-5 flex h-20 items-end gap-2">{bars.map((height, index) => <div key={index} className="flex-1 rounded-t-md bg-gradient-to-t from-indigo-600 to-cyan-400" style={{ height: `${height}%` }} />)}</div>
-                      <div className="mt-2 flex justify-between text-[8px] text-slate-400"><span>{english ? "Sat" : "السبت"}</span><span>{english ? "Fri" : "الجمعة"}</span></div>
-                    </div>
-                    <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                      <p className="text-[10px] font-semibold">{english ? "Before payroll cut-off" : "قبل إغلاق الرواتب"}</p>
-                      <div className="mt-4 space-y-3 text-[10px] text-slate-600">
-                        <p><span className="me-2 text-cyan-500">●</span>{english ? "Check time adjustments" : "راجع تعديلات الوقت"}</p>
-                        <p><span className="me-2 text-indigo-500">●</span>{english ? "Resolve leave requests" : "أنهِ طلبات الإجازة"}</p>
-                        <p><span className="me-2 text-emerald-500">●</span>{english ? "Review payroll inputs" : "راجع مدخلات الرواتب"}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="relative aspect-[16/10] bg-white">
+                <Image src={english ? "/screens/en-attendance.webp" : "/screens/ar-attendance.webp"} alt={english ? "HR Dock attendance board: who is present, late or not in yet today" : "لوحة الحضور في HR Dock: مين حاضر ومتأخر ومين لسه مسجلش النهارده"} fill priority sizes="(max-width: 1024px) 100vw, 680px" className="object-cover object-top" />
               </div>
             )}
           </div>
-          <p className="mt-4 text-center text-[11px] text-slate-500">{english ? "Illustrative dashboard preview" : "معاينة توضيحية للوحة المعلومات"}</p>
+          <p className="mt-4 text-center text-[11px] text-slate-500">{english ? "A real HR Dock screen, shown with a sample company" : "شاشة حقيقية من HR Dock ببيانات شركة تجريبية"}</p>
         </div>
       </div>
     </section>
