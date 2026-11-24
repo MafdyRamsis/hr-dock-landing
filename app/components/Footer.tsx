@@ -31,6 +31,7 @@ export default function Footer() {
                 ["#products", t("products.m2.name")],
                 ["#products", t("products.m3.name")],
                 ["#features", t("nav.features")],
+                ["#mobile-app", ar ? "تطبيق الموبايل" : "Mobile app"],
               ].map(([href, label]) => (
                 <li key={label}>
                   <a href={href} className="text-sm text-slate-400 transition-colors hover:text-cyan-300">{label}</a>

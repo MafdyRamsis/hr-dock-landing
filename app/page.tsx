@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Pricing from "./components/Pricing";
 import EgyptReady from "./components/EgyptReady";
+import MobileApp from "./components/MobileApp";
 import { getDemoEndpoint } from "./lib/demo-delivery";
 import { getSiteContent } from "./lib/site-content";
 
@@ -22,6 +23,7 @@ export default async function Home() {
       <Stats />
       <Products />
       <EgyptReady />
+      <MobileApp />
       <About />
       <Clients content={content.clients} />
       <Pricing content={content.pricing} />
